@@ -1,0 +1,464 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #E6E6E6;
+    display: flex;
+    justify-content: center;
+
+}
+
+section {
+    height: 100vh;
+    width: 60%;
+
+}
+
+h1 {
+    color: #00B8A9;
+}
+
+.cont1 {
+    display: flex;
+}
+
+.barra {
+    background: linear-gradient(to bottom, #23C0B1, #51CCB8, #7ED59C);
+    width: 5%;
+}
+
+.info {
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.primer_bloque {
+    display: flex;
+    justify-content: space-between;
+}
+
+.factura {
+    font-size: 60px;
+    font-weight: bold;
+    margin-right: 30px;
+    margin-top: 120px;
+}
+
+.cuadrado {
+    padding-top: 50px;
+    width: 180px;
+    height: 270px;
+    font-size: 25px;
+    margin-left: 10%;
+    background-color: #23C0B1;
+    text-align: center;
+}
+
+.imagen {
+    width: 150px;
+}
+
+.nombre {
+    font-family: sans-serif;
+    font-weight: 50;
+    font-size: 25px;
+    color: white;
+}
+
+.contenedor_texto {
+    display: flex;
+    gap: 5px;
+}
+
+.datos {
+    text-transform: uppercase;
+    color: #00b8a9;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+
+.segundo_bloque {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 90px;
+    margin-bottom: 80px;
+    justify-content: space-between;
+}
+
+.metodo_pago {
+    margin-top: 20px;
+    margin-right: 250px;
+}
+
+.metodo_p {
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.contac {
+    display: flex;
+    font-size: 18px;
+}
+
+.informacion_1 {
+    font-weight: bold;
+}
+
+.tercer_bloque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 95%;
+}
+
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+thead {
+    background-color: #00B8A9;
+    color: white;
+
+}
+
+table th {
+    width: 20em;
+
+}
+
+tr:nth-child(even) {
+    background-color: #E4E4E4;
+}
+
+
+.tabla th {
+    padding: 10px 5px;
+    font-size: 18px;
+
+}
+
+.tabla td {
+    padding: 10px 5px;
+    text-align: center;
+
+}
+
+.borde {
+    border-bottom: #E4E4E4 solid 6px;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 19px;
+    padding-bottom: 40px;
+}
+
+#total_precio {
+    font-weight: bold;
+    font-size: 19px;
+    padding-bottom: 40px;
+}
+
+hr {
+    border-color: #00B8A9;
+    width: 90%;
+    margin: 10px;
+    margin-left: 5%;
+    text-align: center;
+}
+
+
+.cuarto_bloque {
+    display: flex;
+
+}
+
+.wit {
+    background: white;
+}
+
+
+.totalp {
+    margin-top: 10px;
+}
+
+.cuarto_bloque {
+    display: flex;
+    margin-bottom: 3%;
+    margin-left: 5%;
+    justify-content: space-between;
+    margin-top: 90px;
+}
+
+.gracias {
+    font-size: 50px;
+    margin-right: 100px;
+}
+
+.dirrecion {
+    text-align: center;
+    margin: 25px;
+    font-size: 18px;
+}
+
+@media(max-width: 1300px){
+    .factura {
+        font-size: 45px;
+        font-weight: bold;
+        margin-right: 30px;
+        margin-top: 80px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .primer_bloque {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .factura {
+        font-size: 45px;
+        font-weight: bold;
+        margin-right: 30px;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .gracias {
+        font-size: 35px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    section {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .barra {
+        background: linear-gradient(to bottom, #23C0B1, #51CCB8, #7ED59C);
+        width: 9%;
+    }
+
+    .primer_bloque {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .factura {
+        font-size: 40px;
+        font-weight: bold;
+        margin-right: 30px;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .segundo_bloque {
+        display: flex;
+        margin-left: 30px;
+        margin-top: 80px;
+        flex-direction: column;
+    }
+
+    .datos {
+        text-transform: uppercase;
+        color: #00b8a9;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        font-size: 15px;
+    }
+
+    .tabla {
+        border: 0px;
+        font-size: 12px;
+    }
+
+    .tabla thead {
+        display: none;
+    }
+
+    .tabla tr {
+        margin-bottom: 8px;
+        border-bottom: 4px solid #E4E4E4;
+    }
+
+    .tabla th,
+    .tabla td {
+        font-size: 12px;
+    }
+
+    .tabla td {
+        display: block;
+        border-bottom: 1px solid #E6E6E6;
+        text-align: right;
+    }
+
+    .tabla td:last-child {
+        border-bottom: 0px;
+    }
+
+    .tabla td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+        font-size: 15px;
+    }
+
+    .gracias {
+        font-size: 45px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    .primer_bloque {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        height: 100vh;
+        width: 100%;
+    }
+
+    h1 {
+        color: #00B8A9;
+    }
+
+    .cont1 {
+        display: flex;
+    }
+
+    .barra {
+        background: linear-gradient(to bottom, #23C0B1, #51CCB8, #7ED59C);
+        width: 10%;
+    }
+
+    .factura {
+        font-size: 40px;
+        font-weight: bold;
+        margin-right: 30px;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .contenedor_texto {
+        display: flex;
+        gap: 5px;
+    }
+
+    .datos {
+        text-transform: uppercase;
+        color: #00b8a9;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        font-size: 14px;
+    }
+
+    .segundo_bloque {
+        display: flex;
+        margin-left: 30px;
+        margin-top: 80px;
+        flex-direction: column;
+    }
+
+    .tabla {
+        border: 0px;
+        font-size: 12px;
+    }
+
+    .tabla thead {
+        display: none;
+    }
+
+    .tabla tr {
+        margin-bottom: 8px;
+        border-bottom: 4px solid #E4E4E4;
+    }
+
+    .tabla th,
+    .tabla td {
+        font-size: 12px;
+    }
+
+    .tabla td {
+        display: block;
+        border-bottom: 1px solid #E6E6E6;
+        text-align: right;
+    }
+
+    .tabla td:last-child {
+        border-bottom: 0px;
+    }
+
+    .tabla td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+        font-size: 15px;
+    }
+
+    .metodo_p {
+        white-space: nowrap;
+    }
+
+    .gracias {
+        font-size: 30px;
+    }
+
+    .cuarto_bloque {
+        display: flex;
+        margin-bottom: 3%;
+        margin-left: 5%;
+        justify-content: space-between;
+        margin-top: 90px;
+        display: block;
+    }
+
+    #total {
+        font-size: 15px;
+    }
+
+    .contac {
+        font-size: 14px;
+    }
+}
+

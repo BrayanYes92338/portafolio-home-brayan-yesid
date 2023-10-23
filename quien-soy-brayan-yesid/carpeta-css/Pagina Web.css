@@ -1,0 +1,347 @@
+* {
+	margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	padding: 90px  0;
+    position: relative;
+    min-height: 100vh;
+    
+}
+
+.header {
+	background-color: #146ECB;
+	height: 80px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	max-width: 992px;
+	margin: 0 auto;
+}
+
+.nav-link {
+	color: white;
+	text-decoration: none;
+}
+
+.logo {
+	font-size: 30px;
+	font-weight: bold;
+	padding: 0 40px;
+	line-height: 80px;
+}
+
+.nav-menu {
+	display: flex;
+	margin-right: 40px;
+	list-style: none;
+}
+
+.nav-menu-item {
+	font-size: 18px;
+	margin: 0 10px;
+	line-height: 80px;
+	text-transform: uppercase;
+	width: max-content;
+}
+
+.nav-menu-link {
+	padding: 8px 12px;
+	border-radius: 8px;
+}
+
+.nav-menu-link:hover {
+	background-color: #26A9F0;
+	transition: 0.5s;
+}
+
+.nav-toggle {
+	color: white;
+	background: none;
+	border: none;
+	font-size: 30px;
+	padding: 0 20px;
+	line-height: 60px;
+	display: none;
+}
+
+
+h2 {
+    font-size: 35px;
+}
+
+
+.main {
+    padding-bottom: 20px;
+}
+
+.logos-lenguaje {
+    width: 250px;
+}
+
+.quien-soy {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    text-align: left;
+
+}
+
+
+.Alpha {
+    width: 450px;
+    height: auto;
+
+}
+
+.titulo {
+    font-size: 50px;
+    margin: 15px;
+    color: #1172d3;
+}
+
+.PQuien {
+    display: grid;
+    margin-bottom: 50px;
+
+}
+
+.descripcion {
+    font-size: 22px;
+}
+
+.button {
+    margin-top: 35px;
+}
+
+
+
+.boton {
+    background-color: #0790FB;
+    color: white;
+    border-radius: 14px;
+    padding: 15px;
+    cursor: pointer;
+    border: 2px solid #0038AB;
+    font-size: 20px;
+
+}
+
+.boton:hover {
+    background-color: #24a3e7;
+}
+
+
+.Filosofia {
+    background-color: #146ECB;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+    width: 100%;
+
+}
+
+.perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Dester {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    border: #FF411E solid 10px;
+
+}
+
+.Palabras {
+    font-size: 25px;
+    color: white;
+    margin: 40px;
+
+}
+
+.Mis-Proyectos {
+    text-align: center;
+    font-size: 32px;
+    padding-bottom: 30px;
+    margin: 25px;
+    margin: 15px;
+    color: #454545;
+}
+
+.contenedores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.container {
+    width: 350px;
+    padding: 40px;
+    background-color: white;
+    text-align: center;
+    border: gray solid 2px;
+    border-radius: 18px;
+}
+
+.texto {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.btn-precio {
+    background-color: #0790FB;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border: solid #004ce4 2px;
+}
+
+.btn-precio:hover {
+    background-color: #24a3e7;
+}
+
+
+.footer {
+    background-color: #363941;
+    color: white;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.copy {
+    padding-right: 20px;
+    text-align: right;
+}
+
+
+.quien-soy {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 15px;
+}
+
+.contenedores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 1440px) {
+    .quien-soy,
+    .contenedores {
+        grid-template-columns: repeat(1, 1fr);
+    }
+.descripcion{
+    font-size: 18px;
+}
+
+}
+
+
+
+
+@media (max-width: 768px) {
+	body {
+		padding-top: 70px;
+	}
+
+	.header {
+
+		height: 60px;
+
+	}
+
+	.logo {
+		font-size: 25px;
+		padding: 0 20px;
+		line-height: 60px;
+	}
+
+	.nav-menu {
+		flex-direction: column;
+		align-items: center;
+		margin-right: 40px;
+		background-color: #2c3e50;
+		position: fixed;
+		left: 0;
+		top: 60px;
+		width: 100%;
+		padding: 20px 0;
+		height: calc(100% - 60px);
+		overflow-y: auto;
+		left: 100%;
+		transition: left 0.3s;
+	}
+
+	.nav-menu-item {
+		line-height: 70px;
+	}
+
+
+	.nav-menu-link:hover,
+	.nav-menu-link_active {
+		background:none;
+		color: #83c5f7;
+	}
+
+	.nav-toggle {
+		display: block;
+	}
+
+	.nav-menu_visible{
+		left: 0;
+	}
+
+
+
+    .logos-lenguaje {
+        width: 150px;
+        height: 150px;
+    }
+    .main {
+        margin-top: 20px;
+    }
+
+    
+    .contenedores {
+        grid-template-columns: repeat(1, 1fr);
+       
+    }
+
+    .Alpha{
+        width: 250px;
+    }
+
+    .Dester {
+        width: 250px;
+        height: 250px;
+    }
+}

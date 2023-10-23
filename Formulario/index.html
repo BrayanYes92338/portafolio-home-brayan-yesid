@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" href="./img/froggy-sin-corona.ico">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="formulario.js" defer></script>
+</head>
+
+<body>
+    <div class="alertas">
+        <div class="modal">
+            <div class="modal-content alerta">
+                <span class="closeicon"><i class="fa fa-times"></i></span>
+                <div class="modal-body">
+                    <span class="icon"><i class="fa fa-exclamation-circle"></i></span>
+                    <div class="right-items">
+                        <div class="titulo-alert">
+                            <h1>¡Alerta!</h1>
+                        </div>
+                        <div class="texto-alert">
+                            <h3 id="alert"></h3>
+                        </div>
+                        <button class="okbtn">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal2">
+            <div class="modal-content exito">
+                <span class="closeicon2"><i class="fa fa-times"></i></span>
+                <div class="modal-body">
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>
+                    <div class="right-items">
+                        <div class="titulo-alert">
+                            <h1>¡Exito!</h1>
+                        </div>
+                        <div class="texto-alert">
+                            <h3 id="alert2"></h3>
+                        </div>
+                        <button class="okbtn2">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal3">
+            <div class="modal-content error">
+                <span class="closeicon3"><i class="fa fa-times"></i></span>
+                <div class="modal-body">
+                    <span class="icon"><i class="fa fa-exclamation-triangle"></i></span>
+                    <div class="right-items">
+                        <div class="titulo-alert">
+                            <h1>¡Error!</h1>
+                        </div>
+                        <div class="texto-alert">
+                            <h3 id="alert3"></h3>
+                        </div>
+                        <button class="okbtn3">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="" id="formulario">
+        <h2>FORMULARIO</h2>
+        <div class="input-group">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" placeholder="Ingrese su nombre">
+
+            <label for="lastname">Apellido:</label>
+            <input type="text" name="lastname" id="lastname" placeholder="Ingrese su Apellido">
+
+            <label for="birthdate">Fecha de Nacimiento:</label>
+            <input type="date" name="birthdate" id="birthdate" required>
+
+            <label for="phone">Número de teléfono:</label>
+            <input type="tel" name="phone" id="phone" required pattern="[0-9]+" maxlength="10"
+                placeholder="Ingrese número de teléfono">
+            <label for="email">Correo:</label>
+            <input type="email" name="email" id="email" placeholder="Ingrese su correo" required>
+            <label for="documentType">Tipo de documento de identidad</label>
+            <select name="documentType" id="documentType" class="catego">
+                <option disabled selected hidden value="">Seleccione su documento</option>
+                <option value="Cédula-de-Ciudadanía">Cédula de ciudadanía</option>
+                <option value="Cédula-Extranjera">Cédula Extranjera</option>
+                <option value="Tarjeta-de-Identidad">Tarjeta de Identidad</option>
+                <option value="Permiso-por-Protección-Temporal">Permiso por Protección Temporal</option>
+                <option value="Permiso-Especial-de-Permanencia">Permiso Especial de Permanencia</option>
+            </select>
+            <label for="documentNumber">Número de documento:</label>
+            <input type="tel" name="documentNumber" id="documentNumber" required pattern="[0-9]+" maxlength="14"
+                placeholder="Ingrese número de documento">
+            <div>
+                <label for="gender">Género:</label>
+                <label for="male"><input type="radio" id="male" name="gender" value="Hombre"> Hombre</label>
+                <label for="female"><input type="radio" id="female" name="gender" value="Mujer"> Mujer</label>
+            </div>
+            <label for="termsAndConditions" class="text">
+                <input type="checkbox" id="termsAndConditions" required value="acepta terminos y condicones"> Declaro
+                haber leído y aceptado los términos y condiciones</label>
+            <button class="button" onclick="validar()">Enviar</button>
+        </div>
+    </form>
+        <table >
+            <thead>
+                <tr >
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Numero de telefono</th>
+                    <th>Correo</th>
+                    <th>Tipo de Documento</th>
+                    <th>Numero de Documento</th>
+                    <th>Genero</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla">
+            </tbody>
+        </table>
+</body>
+
+</html>
