@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasto Semanal</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <div class="alertas">
+        <div class="modal">
+            <div class="modal-contenido info">
+                <span class="closeicon"><i class="fa fa-times"></i></span>
+                <div class="modal-body">
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>
+                    <div class="right-items">
+                        <div class="titulo-alert">
+                            <h1>¡Bienvenido!</h1>
+                        </div>
+                        <div class="texto-alert">
+                            <h3 id="alert">Ingrese presupuesto:</h3>
+                            <input type="tel" placeholder="Ingrese presupuesto">
+                        </div>
+                        <button class="okbtn azul">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal-content alerta">
+                <span class="closeicon"><i class="fa fa-times"></i></span>
+                <div class="modal-body">
+                    <span class="icon"><i class="fa fa-exclamation-circle"></i></span>
+                    <div class="right-items">
+                        <div class="titulo-alert">
+                            <h1>¡Alerta!</h1>
+                        </div>
+                        <div class="texto-alert">
+                            <h3 id="alert"></h3>
+                        </div>
+                        <button class="okbtn">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal2">
+            <div class="modal-content exito">
+                <span class="closeicon2"><i class="fa fa-times"></i></span>
+                <div class="modal-body">
+                    <span class="icon"><i class="fa fa-thumbs-up"></i></span>
+                    <div class="right-items">
+                        <div class="titulo-alert">
+                            <h1>¡Exito!</h1>
+                        </div>
+                        <div class="texto-alert">
+                            <h3 id="alert2"></h3>
+                        </div>
+                        <button class="okbtn2">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal3">
+            <div class="modal-content error">
+                <span class="closeicon3"><i class="fa fa-times"></i></span>
+                <div class="modal-body">
+                    <span class="icon"><i class="fa fa-exclamation-triangle"></i></span>
+                    <div class="right-items">
+                        <div class="titulo-alert">
+                            <h1>¡Error!</h1>
+                        </div>
+                        <div class="texto-alert">
+                            <h3 id="alert3"></h3>
+                        </div>
+                        <button class="okbtn3">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="gse">Gasto Semanal</h2>
+    <div class="cuerpo">
+        <div class="primera-parte">
+            <p class="titulo">Añade tus gastos aquí</p>
+            <div class="info">
+                <p class="mini-alert">hola hola</p>
+            </div>
+            <div class="info2">
+               <p class="mini-alert2"> hola hola</p>
+            </div>  
+            <div class="primera-arte">
+                <label for="">Articulo:</label>
+                <input type="text" placeholder="Ingrese nombre del articulo">
+            </div>
+            <div class="segunda-parte">
+                <label for="">Precio:</label>
+                <input type="tel" placeholder="Ingrese Precio del articulo">
+            </div>
+            <button class="okboton">Aceptar</button>
+        </div>
+        <div class="segunda-parte">
+            <p>Listado</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Precio</th>
+                        <th>Boton</th>
+                    </tr>
+                </thead>
+                <tbody id="lista">
+                </tbody>
+            </table>
+            <div class="alert">
+                <div class="datos-pre">
+                    <h2>Presupuesto:</h2>
+                    <p class="actualizar">???</p>
+                </div>
+                <div class="datos-pre2">
+                    <h2>Restante:</h2>
+                    <p class="actualizar2">???</p>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
