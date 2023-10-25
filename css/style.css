@@ -95,7 +95,8 @@ body {
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     align-items: center;
-    gap: 4px;
+	gap: 20px;
+	margin: 0 20px;
 }
 
 .container {
@@ -109,6 +110,7 @@ body {
 
 .logos-lenguaje {
     width: 250px;
+	
 }
 
 .texto {
@@ -157,6 +159,24 @@ body {
     padding-right: 20px;
     text-align: right;
 }
+
+@media(max-width: 1500px) {
+.contenedores{
+	grid-template-columns: repeat(3, 1fr);
+
+}
+
+.container{
+	width: 300px;
+}
+}
+
+@media(max-width: 976px) {
+    .contenedores{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 @media (max-width: 768px) {
 	body {
@@ -214,7 +234,11 @@ body {
 		margin-top: 50px;
 	}
 
-    .contenedores{
+
+}
+
+@media(max-width: 720px){
+	.contenedores{
         grid-template-columns: repeat(1, 1fr);
     }
 }

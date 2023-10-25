@@ -28,27 +28,27 @@ body {
     right: 0px;
     animation-name: apertura;
     animation-duration: 1s;
-
-
 }
 
 .modal.active {
     display: flex;
 }
 
-
-
+.infor{
+    background-color: #EBF4FB;
+    
+}
 
 .modal-contenido {
-    bottom: 320px;
-    color: white;
+    bottom: 300px;
+    color: #22517B;
     width: 500px;
     height: 250px;
     overflow: hidden;
     position: relative;
     border-radius: 23px;
     box-shadow: 0. 0.75em 1em #0b0c0e4d;
-    border: 2px solid rgba(0, 0, 0, 0.4);
+    border: 3px solid #016BBF;
 }
 
 .closeicon {
@@ -65,12 +65,14 @@ body {
     padding: 9px 9px;
     background: rgba(0, 0, 0, 0.2);
     color: white;
+    font-weight: bold;
 
 }
 
 .barra-info::placeholder {
     color: white;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .modal-body {
@@ -83,7 +85,7 @@ body {
 }
 
 .icon {
-    font-size: 80px;
+    font-size: 90px;
     color: rgba(0, 0, 0, 0.4);
 }
 
@@ -115,7 +117,7 @@ body {
 .okbtn {
     padding: 8px 15px;
     font-size: 18px;
-    background: rgba(0, 0, 0, 0.4);
+    background: #0785D1;
     color: white;
     border: none;
     border-radius: 5px;
@@ -123,8 +125,8 @@ body {
     position: absolute;
     right: 15px;
     bottom: 20px;
+    border: #095382 solid 2px;
 }
-
 
 
 
