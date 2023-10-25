@@ -23,11 +23,11 @@
                             <h1>¡Bienvenido!</h1>
                         </div>
                         <div class="texto-alert">
-                            <h3 id="alert" class="til">Ingrese su presupuesto:</h3>
-                            <input type="tel" placeholder="Ingrese presupuesto" class="barra-info">
-                            <p class="info4">hola</p>
+                            <h3  class="til">Ingrese su presupuesto:</h3>
+                            <input type="tel" placeholder="Ingrese presupuesto" class="barra-info" id="boton-input">
+                            <p class="info4" id="alert"></p>
                         </div>
-                        <button class="okbtn">Enviar</button>
+                        <button class="okbtn" id="enviar-btn">Enviar</button>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 <label for="">Precio:</label>
                 <input type="tel" placeholder="Ingrese Precio del articulo en $" class="barra">
             </div>
-            <button class="okboton">Aceptar</button>
+            <button class="okboton" onclick="establecerpre()">Aceptar</button>
         </div>
         <div class="segunda-parte">
             <p class="titulo2">Listado</p>
@@ -69,8 +69,8 @@
             </table>
             <div class="alert">
                 <div class="datos-pre">
-                    <p><strong>Presupuesto:</strong> $</p>
-                    <p class="actualizar">???</p>
+                    <p id="infopresu"><strong>Presupuesto:</strong> $</p>
+                    <p class="actualizar" id="presupuestoini"></p>
                 </div>
                 <div class="datos-pre2">
                     <p><strong>Restante:</strong> $</p>
