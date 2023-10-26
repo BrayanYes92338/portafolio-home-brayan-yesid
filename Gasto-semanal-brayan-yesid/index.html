@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gasto Semanal</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -17,33 +17,52 @@
             <div class="modal-contenido infor">
                 <span class="closeicon"><i class="fa fa-times"></i></span>
                 <div class="modal-body">
-                    <span class="icon">  <i class="fas fa-dollar-sign"></i></span>
+                    <span class="icon"> <i class="fas fa-dollar-sign"></i></span>
                     <div class="right-items">
                         <div class="titulo-alert">
                             <h1>¡Bienvenido!</h1>
                         </div>
                         <div class="texto-alert">
-                            <h3  class="til">Ingrese su presupuesto:</h3>
+                            <h3 class="til">Ingrese su presupuesto:</h3>
                             <input type="tel" placeholder="Ingrese presupuesto" class="barra-info" id="boton-input">
                             <p class="info4" id="alert"></p>
                         </div>
-                        <button class="okbtn" id="enviar-btn">Enviar</button>
+                        <button class="okbtn" id="enviar-presu-btn" disabled
+                            onclick="presupuestoEstablecido()">Enviar</button>
                     </div>
                 </div>
             </div>
         </div>
-   
+
     </div>
-    <h2 class="gse">Gasto Semanal</h2>
+
     <div class="cuerpo">
         <div class="primera-parte">
-            <p class="titulo">Añade tus gastos aquí</p>
+            <p class="titulo">Añade tus compras aquí</p>
             <div class="info">
-                <p class="mini-alert">hola hola</p>
+                <div class="info-contenido">
+                    <span class="iconocierre"><i class="fa fa-times"></i></span>
+                    <div class="info-body">
+                        <span class="icono"><i class="fa fa-thumbs-up"></i></span>
+                        <div class="titulo-alerta">
+                            <h1 class="mini-alertas">¡Exito!</h1>
+                        </div>
+                        <p id="mini-alert"></p>
+                    </div>
+                </div>
             </div>
             <div class="info2">
-               <p class="mini-alert2"> hola hola</p>
-            </div>  
+                <div class="info-contenido2">
+                    <span class="iconocierre2"><i class="fa fa-times"></i></span>
+                    <div class="info-body2">
+                        <span class="icono2"><i class="fa fa-exclamation-triangle"></i></span>
+                        <div class="titulo-alerta2">
+                            <h1 class="mini-alertas">¡Error!</h1>
+                        </div>
+                        <p id="mini-alert2"></p>
+                    </div>
+                </div>
+            </div>
             <div class="parte-articulo">
                 <label for="">Articulo:</label>
                 <input type="text" placeholder="Ingrese nombre del articulo" class="barra">
@@ -52,7 +71,7 @@
                 <label for="">Precio:</label>
                 <input type="tel" placeholder="Ingrese Precio del articulo en $" class="barra">
             </div>
-            <button class="okboton" onclick="establecerpre()">Aceptar</button>
+            <button class="okboton" onclick="establecerpre()">Enviar</button>
         </div>
         <div class="segunda-parte">
             <p class="titulo2">Listado</p>
@@ -75,7 +94,7 @@
                 <div class="datos-pre2">
                     <p><strong>Restante:</strong> $</p>
                     <p class="actualizar2">???</p>
-                  
+
                 </div>
             </div>
         </div>

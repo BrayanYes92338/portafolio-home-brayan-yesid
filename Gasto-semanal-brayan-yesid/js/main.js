@@ -1,25 +1,26 @@
-
 function formatCurrency(amount) {
-    return '$' + parseFloat(amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+
+    return amount.toLocaleString('es-ES', { style: 'currency', currency: 'USD' });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+function presupuestoEstablecido() {
     const modal = document.querySelector('.modal');
     modal.classList.add('active');
 
-    const botoninput = document.getElementById('boton-input');
-    const enviarbtn = document.getElementById('enviar-btn');
+    const botonInput = document.getElementById('boton-input');
+    const enviarPresuBtn = document.getElementById('enviar-presu-btn'); 
     const alerta = document.getElementById('alert');
 
-    botoninput.addEventListener('input', function() { 
-        if (isNaN(botoninput.value) || parseFloat(botoninput.value) <= 0 || botoninput.value.trim() === "") {
-            enviarbtn.disabled = true;
-            alerta.textContent = "Ingresa un número positivo válido.";
+    botonInput.addEventListener('input', function() { 
+        if (isNaN(botonInput.value) || parseFloat(botonInput.value) <= 0 || botonInput.value.trim() === "") {
+            enviarPresuBtn.disabled = true;
+            alerta.textContent = "Ingresa un número  válido.";
             setTimeout(function() {
                 alerta.textContent = "";
             }, 5000);
         } else {
-            enviarbtn.disabled = false;
+            enviarPresuBtn.disabled = false;
+            alertas();
         }
     });
 
@@ -28,10 +29,24 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.classList.remove('active');
     });
 
-    let presupuesto = 0;
+    enviarPresuBtn.addEventListener('click', function() {
+        const preinicial = parseFloat(botonInput.value);
+        const saldores = preinicial;
+        document.getElementById("presupuestoini").textContent = formatCurrency(preinicial);
+        modal.classList.remove('active');
+    });
+}
 
-    function establecerpre() {
-        presupuesto = document.getElementById("infopresu").value;
-        document.getElementById("presupuestoini").textContent = formatCurrency(presupuesto);
-    }
+document.addEventListener("DOMContentLoaded", function() {
+    presupuestoEstablecido();
+
+    
 });
+
+function alertas(){
+ const minialert = document.getElementById('mini-alert');
+        minialert.textContent = "Se ha ingresado el presupuesto de manera existosa";
+    setTimeout(function() {
+        minialert.textContent = "";
+    }, 6000);
+}

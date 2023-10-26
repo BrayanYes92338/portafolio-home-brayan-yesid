@@ -128,7 +128,9 @@ body {
     border: #095382 solid 2px;
 }
 
-
+.okbtn:hover{
+    background: #1696e6;
+}
 
 .cuerpo {
     background-color: #ffff;
@@ -136,8 +138,8 @@ body {
     border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 1220px;
-    height: 500px;
+    width: 80%;
+    min-height: 300px;
     border: solid 4px green;
     gap: 60px;
 
@@ -159,6 +161,8 @@ body {
     margin-bottom: 25px;
     border-radius: 5px;
     color: #547e74;
+    border: solid 1px #0f5132;
+    
 }
 
 .info2 {
@@ -168,11 +172,10 @@ body {
     font-size: 18px;
     border-radius: 5px;
     color: #651C2D;
+    border: solid 1px #651C2D;
+    
 }
 
-.gse {
-    font-size: 50px;
-}
 
 .parte-articulo {
     display: flex;
@@ -197,9 +200,14 @@ body {
     cursor: pointer;
     font-size: 18px;
     border: none;
-    background-color: #59A9FE;
-    color: white;
+    background-color: #0f90ec;
     margin-top: 10px;
+    color: white;
+    border: solid 2px #095382;
+}
+
+.okboton:hover {
+    background-color:  #539ff0;
 }
 
 .titulo2 {
