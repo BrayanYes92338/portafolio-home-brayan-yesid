@@ -28,19 +28,20 @@ body {
     right: 0px;
     animation-name: apertura;
     animation-duration: 1s;
+    z-index: 5;
 }
 
 .modal.active {
     display: flex;
 }
 
-.infor{
+.infor {
     background-color: #EBF4FB;
-    
+
 }
 
 .modal-contenido {
-    bottom: 300px;
+    bottom: 290px;
     color: #22517B;
     width: 500px;
     height: 290px;
@@ -49,6 +50,7 @@ body {
     border-radius: 23px;
     box-shadow: 0. 0.75em 1em #0b0c0e4d;
     border: 3px solid #016BBF;
+
 }
 
 .closeicon {
@@ -58,6 +60,8 @@ body {
     cursor: pointer;
     transition: .3s;
     font-size: 20px;
+   
+  
 }
 
 .barra-info {
@@ -82,6 +86,7 @@ body {
     justify-content: center;
     height: 100%;
     padding: 20px;
+    
 }
 
 .icon {
@@ -128,7 +133,7 @@ body {
     border: #095382 solid 2px;
 }
 
-.okbtn:hover{
+.okbtn:hover {
     background: #1696e6;
 }
 
@@ -160,9 +165,49 @@ body {
     font-size: 18px;
     margin-bottom: 25px;
     border-radius: 5px;
-    color: #547e74;
+    color: #507069;
     border: solid 1px #0f5132;
-    
+    animation-name: desplazamiento1;
+    animation-duration: 1s;
+    display: none;
+}
+
+.info.active {
+    display: flex;
+}
+
+.info-contenido {
+    overflow: hidden;
+    position: relative;
+
+}
+
+.iconocierre{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.info-body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.icono {
+    font-size: 90px;
+    margin-right: 40px;
+}
+
+.derecha-items {
+    margin-left: 30px;
 }
 
 .info2 {
@@ -173,9 +218,48 @@ body {
     border-radius: 5px;
     color: #651C2D;
     border: solid 1px #651C2D;
-    
+    animation-name: desplazamiento1;
+    animation-duration: 1s;
+display: none;
+}
+.info2.active {
+    display: flex;
 }
 
+.info-contenido2 {
+    overflow: hidden;
+    position: relative;
+
+}
+
+.iconocierre2{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 20px;
+    z-index: 1;
+
+}
+
+.info-body2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.icono2 {
+    font-size: 90px;
+    margin-right: 40px;
+}
+
+.derecha-items2 {
+    margin-left: 30px;
+}
 
 .parte-articulo {
     display: flex;
@@ -201,13 +285,13 @@ body {
     font-size: 18px;
     border: none;
     background-color: #0f90ec;
-    margin-top: 10px;
+    margin-top: 20px;
     color: white;
     border: solid 2px #095382;
 }
 
 .okboton:hover {
-    background-color:  #539ff0;
+    background-color: #539ff0;
 }
 
 .titulo2 {
@@ -232,9 +316,16 @@ body {
 @keyframes apertura {
     from {
         transform: translateY(-100%);
-    }
-
-    to {
+    }to {
         transform: translateY(0);
     }
+}
+
+@keyframes desplazamiento1 {
+    from{
+        transform: translateX(100%);
+    }to {
+        transform: translateX(0);
+    }
+
 }
