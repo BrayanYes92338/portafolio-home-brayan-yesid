@@ -162,7 +162,7 @@ body {
     margin-top: 30px;
 }
 
-button{
+button {
     color: white;
     padding: 13px 13px;
     border-radius: 8px;
@@ -171,11 +171,11 @@ button{
     border: none;
     cursor: pointer;
     font-weight: bold;
-  
+
 }
 
 
-thead{
+thead {
     display: none;
 }
 
@@ -194,12 +194,12 @@ table {
 
 th,
 td {
-    border-bottom: #E1E1E1 2px solid ;
+    border-bottom: #E1E1E1 2px solid;
     padding: 10px;
-    
+
 }
 
-tbody{
+tbody {
     width: 100%;
     padding: 15px 15px;
 }
@@ -266,8 +266,8 @@ tbody{
     border: solid 1px #651C2D;
     animation-name: notificacion;
     animation-duration: 750ms;
-   display: none; 
-   
+    display: none;
+
 }
 
 .info2.active {
@@ -362,7 +362,7 @@ tbody{
     position: absolute;
     right: 5px;
     bottom: 0px;
-    
+
 }
 
 .okboton:hover {
@@ -392,6 +392,11 @@ tbody{
 
 .datos-pre2 {
     display: flex;
+    padding: 15px 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    
+    color: rgba(0, 0, 0, 0.7);
 }
 
 @keyframes apertura {
@@ -408,7 +413,9 @@ tbody{
 
     from {
         transform: translatex(100%);
-    }to {
+    }
+
+    to {
         transform: translatex(0);
     }
 }

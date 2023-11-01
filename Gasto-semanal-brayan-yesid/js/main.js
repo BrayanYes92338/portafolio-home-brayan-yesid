@@ -1,8 +1,9 @@
 function formatCurrency(amount) {
-    return amount.toLocaleString('es-ES', { style: 'currency', currency: 'USD' });
+    return amount.toLocaleString('es-ES', { style: 'currency', currency: 'COP' });
 }
 
 
+let saldo=0;
 
 function presupuestoEstablecido() {
     const modal = document.querySelector('.modal');
@@ -35,9 +36,12 @@ function presupuestoEstablecido() {
     });
 
     enviarPresuBtn.addEventListener('click', () => {
+      
         const preinicial = parseFloat(botonInput.value);
-        const saldores = preinicial;
+
+        saldo= preinicial
         document.getElementById("presupuestoini").textContent = formatCurrency(preinicial);
+        document.getElementById("saldo").textContent = formatCurrency(preinicial);
         modal.classList.remove('active');
         info.classList.add("active");
         document.getElementById("mini").textContent = "Presupuesto establecido correctamente"
@@ -67,19 +71,22 @@ function establecerpre(oper) {
     let articulo = document.getElementById("articulo").value;
     let precio = document.getElementById("Precio").value;
 
-
-
-
-    if (oper === true) {
-        articulos[indice].articulo = document.getElementById("articulo").value;
-        articulos[indice].precio = document.getElementById("Precio").value;
+    if (isNaN(precio) || precio <= 0 || articulo.trim() === "") {
+        alertas()
     } else {
-        articulos.push({
-            articulo: articulo,
-            precio: precio,
-        });
+        if (oper === true) {
+           
+        } else {
+            articulos.push({
+                articulo: articulo,
+                precio: precio,
+            });
+        }
+        saldo -= precio;
 
+        document.getElementById("saldo").textContent = formatCurrency(saldo); 
     }
+
 
 
     document.getElementById("articulo").value = "";
@@ -89,6 +96,8 @@ function establecerpre(oper) {
     console.log(articulos);
     document.getElementById("tabla").innerHTML = "";
     tabla();
+
+
 
 }
 
@@ -126,7 +135,7 @@ function alertas(estaEnvPresup) {
             info2.classList.remove("active");
         }, 5000);
 
-    }  else if(!estaEnvPresup){
+    } else if (!estaEnvPresup) {
         establecerpre(false)
         document.getElementById("mini").textContent = "Se ha agregado el articulo correctamente"
         info.classList.add("active");
@@ -188,7 +197,7 @@ function tabla() {
 }
 
 function eliminar(i) {
-    index=i
+    index = i
     articulos.splice(indice, 1);
     document.getElementById("tabla").innerHTML = "";
     tabla();
