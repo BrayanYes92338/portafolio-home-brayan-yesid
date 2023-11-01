@@ -320,7 +320,7 @@ function tabla() {
         borrar.textContent = "❌"
         borrar.addEventListener("click", () => {
             eliminar(index)
-        });;
+        });
         td1.textContent = item.name,
         td2.textContent = item.lastname,
         td3.textContent = item.birthdate,

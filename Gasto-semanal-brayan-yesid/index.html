@@ -28,7 +28,7 @@
                             <p class="info4" id="alert"></p>
                         </div>
                         <button class="okbtn" id="enviar-presu-btn" disabled
-                            onclick="presupuestoEstablecido()">Enviar</button>
+                            onclick="alertas(true)">Enviar</button>
                     </div>
                 </div>
             </div>
@@ -39,43 +39,50 @@
     <div class="cuerpo">
         <div class="primera-parte">
             <p class="titulo">Añade tus compras aquí</p>
-            <div class="info">
+            <div class="info" id="info">
                 <div class="info-contenido">
                     <span class="iconocierre"><i class="fa fa-times"></i></span>
                     <div class="info-body">
                         <span class="icono"><i class="fa fa-thumbs-up"></i></span>
-                        <div class="derecha-items">                 
+                        <div class="derecha-items">
                             <div class="titulo-alerta">
                                 <h1 class="mini-alertas">¡Exito!</h1>
                             </div>
-                            <p id="mini-alert"></p>
+                            <div class="texto-mini">
+                                <h3 id="mini" disabled></h3>
+                            </div>
+                            <button class="botonmini">Aceptar</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="info2">
+            <div class="info2" id="info2">
                 <div class="info-contenido2">
                     <span class="iconocierre2"><i class="fa fa-times"></i></span>
                     <div class="info-body2">
                         <span class="icono2"><i class="fa fa-exclamation-triangle"></i></span>
-                      <div class="derecha-items2">
-                          <div class="titulo-alerta2">
-                              <h1 class="mini-alertas">¡Error!</h1>
-                          </div>
-                          <p id="mini-alert2"></p>
-                      </div>
+                        <div class="derecha-items2">
+                            <div class="titulo-alerta2">
+                                <h1 class="mini-alertas">¡Error!</h1>
+                            </div>
+                            <div class="texto-mini">
+                                <h3 id="mini2" disabled ></h3>
+                            </div>
+                            <button class="botonmini2">Aceptar</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="parte-articulo">
                 <label for="">Articulo:</label>
-                <input type="text" placeholder="Ingrese nombre del articulo" class="barra">
+                <input type="text" class="barra" id="articulo" placeholder="Ingrese nombre del articulo"> 
             </div>
             <div class="parte-precio">
                 <label for="">Precio:</label>
-                <input type="tel" placeholder="Ingrese Precio del articulo en $" class="barra">
+                <input type="tel" placeholder="Ingrese Precio del articulo en $" class="barra" id="Precio">
             </div>
-            <button class="okboton" onclick="establecerpre()">Enviar</button>
+            <button id="okboton" class="okboton" onclick="alertas()" disabled >Enviar</button>
+
         </div>
         <div class="segunda-parte">
             <p class="titulo2">Listado</p>
@@ -87,7 +94,7 @@
                         <th>Boton</th>
                     </tr>
                 </thead>
-                <tbody id="lista">
+                <tbody id="tabla">
                 </tbody>
             </table>
             <div class="alert">
@@ -97,7 +104,7 @@
                 </div>
                 <div class="datos-pre2">
                     <p><strong>Restante:</strong> $</p>
-                    <p class="actualizar2">???</p>
+                    <p class="actualizar2"></p>
 
                 </div>
             </div>
