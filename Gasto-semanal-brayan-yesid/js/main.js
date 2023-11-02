@@ -3,8 +3,8 @@ function formatCurrency(amount) {
 }
 
 
-let saldo=0;
-
+let saldo = 0;
+let preinicial = 0;
 function presupuestoEstablecido() {
     const modal = document.querySelector('.modal');
     modal.classList.add('active');
@@ -36,10 +36,11 @@ function presupuestoEstablecido() {
     });
 
     enviarPresuBtn.addEventListener('click', () => {
-      
-        const preinicial = parseFloat(botonInput.value);
 
-        saldo= preinicial
+    
+        
+        preinicial = parseFloat(botonInput.value);
+        saldo = preinicial
         document.getElementById("presupuestoini").textContent = formatCurrency(preinicial);
         document.getElementById("saldo").textContent = formatCurrency(preinicial);
         modal.classList.remove('active');
@@ -69,36 +70,49 @@ let indice = null;
 
 function establecerpre(oper) {
     let articulo = document.getElementById("articulo").value;
-    let precio = document.getElementById("Precio").value;
+    let precio = parseFloat(document.getElementById("Precio").value);
+    const porcentajeGastado = ((saldo / preinicial) * 100).toFixed(2);
+    const datosPre2 = document.querySelector('.datos-pre2');
+
+    if (porcentajeGastado >= 80) {
+        datosPre2.classList.add("active")
+        datosPre2.classList.remove('alr', 'ala');
+        datosPre2.classList.add('alv');
+    } else if (porcentajeGastado >= 50) {
+        datosPre2.classList.add("active")
+        datosPre2.classList.remove('alv', 'alr');
+        datosPre2.classList.add('ala');
+    } else {
+        datosPre2.classList.add("active")
+        datosPre2.classList.remove('ala', 'alv');
+        datosPre2.classList.add('alr');
+    }
 
     if (isNaN(precio) || precio <= 0 || articulo.trim() === "") {
-        alertas()
-    } else {
-        if (oper === true) {
-           
-        } else {
+        alertas();
+        return;
+    }
+
+    if (saldo - precio >= 0) {
+        if (oper !== true) {
             articulos.push({
                 articulo: articulo,
                 precio: precio,
             });
         }
         saldo -= precio;
-
-        document.getElementById("saldo").textContent = formatCurrency(saldo); 
+        document.getElementById("saldo").textContent = formatCurrency(saldo);
+    } else {
+        alertas();
+        return;
     }
-
-
 
     document.getElementById("articulo").value = "";
     document.getElementById("Precio").value = "";
 
-
     console.log(articulos);
     document.getElementById("tabla").innerHTML = "";
     tabla();
-
-
-
 }
 
 function alertas(estaEnvPresup) {
@@ -112,6 +126,15 @@ function alertas(estaEnvPresup) {
     const mini2 = document.getElementById("mini2");
 
 
+    if (saldo <= 0 && !estaEnvPresup) {
+        document.getElementById("okboton").disabled = true;
+        info2.classList.add("active");
+        document.getElementById("mini2").textContent = "Se ha acabado el presupuesto";
+        setTimeout(() => {
+            document.getElementById("mini2").textContent = "";
+            info2.classList.remove("active");
+        }, 5000);
+    }
 
     if (document.getElementById("articulo").value == "" && !estaEnvPresup) {
         info2.classList.add("active");
@@ -135,7 +158,21 @@ function alertas(estaEnvPresup) {
             info2.classList.remove("active");
         }, 5000);
 
-    } else if (!estaEnvPresup) {
+    } else if(/\d/.test(document.getElementById("articulo").value) && !estaEnvPresup) {
+        info2.classList.add("active");
+        document.getElementById("mini2").textContent = "El campo de articulo no debe tener numeros"
+        setTimeout(() => {
+            document.getElementById("mini2").textContent = "";
+            info2.classList.remove("active");
+        }, 5000);
+    }else if(parseFloat(document.getElementById("Precio").value) > saldo && !estaEnvPresup){
+            info2.classList.add("active");
+            document.getElementById("mini2").textContent = "El precio del articulo no debe ser mayor al saldo"
+            setTimeout(() => {
+                document.getElementById("mini2").textContent = "";
+                info2.classList.remove("active");
+            }, 5000);
+    }else if (!estaEnvPresup) {
         establecerpre(false)
         document.getElementById("mini").textContent = "Se ha agregado el articulo correctamente"
         info.classList.add("active");
@@ -185,7 +222,7 @@ function tabla() {
         });
 
         td1.textContent = item.articulo;
-        td2.textContent = item.precio;
+        td2.textContent = formatCurrency(item.precio);
         td3.appendChild(borrar);
         tr.appendChild(td1);
         tr.appendChild(td2);
@@ -198,7 +235,19 @@ function tabla() {
 
 function eliminar(i) {
     index = i
-    articulos.splice(indice, 1);
+    const precioEliminado = articulos[index].precio;
+    let montoTotalEliminado = precioEliminado;
+    articulos.splice(index, 1);
+
+    for (let i = 0; i < articulos.length; i++) {
+        montoTotalEliminado += articulos[i].precio;
+    }
+    saldo += precioEliminado;
+    document.getElementById("saldo").textContent = formatCurrency(saldo);
     document.getElementById("tabla").innerHTML = "";
     tabla();
+    if (saldo > 0) {
+        document.getElementById("okboton").disabled = false;
+    }
+
 }

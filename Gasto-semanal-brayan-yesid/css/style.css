@@ -144,7 +144,7 @@ body {
     border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 80%;
+    width: 90%;
     min-height: 300px;
     border: solid 4px #095382;
     gap: 60px;
@@ -412,6 +412,7 @@ tbody {
     background: #CBE5FC;
     padding: 15px 15px;
     border-radius: 6px;
+    border:  1px solid #095382;
 }
 
 .datos-pre2 {
@@ -419,8 +420,37 @@ tbody {
     padding: 15px 15px;
     border-radius: 6px;
     margin-top: 15px;
-
     color: rgba(0, 0, 0, 0.7);
+}
+
+.alr{
+    background: #F7D7DA;
+    border: #651C2D solid 1px;   
+    display: none;
+}
+
+.alv{
+    background: #D4EDDA;
+    border: #0f5132 solid 1px;   
+    display: none;
+}
+
+.ala{
+    background: #f7d58e;
+    border: #523b0a solid 1px;
+    display: none;
+}
+
+.alr.active{
+    display: flex;
+}
+
+.alv.active{
+    display: flex;
+}
+
+.ala.active{
+    display: flex;
 }
 
 @keyframes apertura {
