@@ -9,8 +9,9 @@
 body {
     background-color: aliceblue;
     height: 100vh;
-    display: grid;
+    display: flex;
     place-items: center;
+    justify-content: center;
 }
 
 .alertas {
@@ -112,7 +113,7 @@ body {
 }
 
 .texto-alert {
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .til {
@@ -205,27 +206,32 @@ tbody {
 }
 
 .info {
+    display: flex;
     padding: 12px 12px;
-    background: #D4EDDA;
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 25px;
-    border-radius: 5px;
-    color: #507069;
-    border: solid 1px #0f5132;
-    display: none;
+    align-items: center;
+    justify-content: center;
     animation-name: notificacion;
     animation-duration: 750ms;
+    display: none;
+}
+
+.info-contenido {
+    background: #D4EDDA;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0. 0.75em 1em #0b0c0e4d;
+    color: #507069;
+    border: solid 2px #0f5132;
+
 }
 
 .info.active {
     display: flex;
-}
-
-.info-contenido {
-    overflow: hidden;
-    position: relative;
-
 }
 
 .iconocierre {
@@ -248,35 +254,60 @@ tbody {
 }
 
 .icono {
-    font-size: 90px;
-    margin-right: 40px;
+    font-size: 100px;
+    margin-right: 60px;
+}
+
+.mini-alertas {
+    position: relative;
+    bottom: 20px;
+    padding-top: 10px;
+    font-size: 35px;
+    text-align: center;
 }
 
 .derecha-items {
     margin-left: 30px;
 }
 
-.info2 {
-    padding: 12px 12px;
-    background: #F7D7DA;
-    text-align: center;
+.botonmini {
+    padding: 8px 8px;
     font-size: 18px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
     border-radius: 5px;
-    color: #651C2D;
-    border: solid 1px #651C2D;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    bottom: 8px;
+}
+
+.info2 {
+    display: flex;
+    padding: 12px 12px;
+    align-items: center;
+    justify-content: center;
     animation-name: notificacion;
     animation-duration: 750ms;
     display: none;
 
 }
 
-.info2.active {
-    display: flex;
-}
 
 .info-contenido2 {
+    background: #F7D7DA;
+    ;
     overflow: hidden;
     position: relative;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0. 0.75em 1em #0b0c0e4d;
+    color: #651C2D;
+    border: solid 2px #651C2D;
 
 }
 
@@ -288,7 +319,20 @@ tbody {
     transition: .3s;
     font-size: 20px;
     z-index: 1;
+}
 
+.derecha-items2 {
+    margin-left: 30px;
+}
+
+
+.icono2 {
+    font-size: 100px;
+    margin-right: 60px;
+}
+
+.info2.active {
+    display: flex;
 }
 
 .info-body2 {
@@ -298,21 +342,27 @@ tbody {
     justify-content: center;
     height: 100%;
     padding: 20px;
+
 }
 
-.icono2 {
-    font-size: 90px;
-    margin-right: 40px;
-}
-
-.derecha-items2 {
-    margin-left: 30px;
+.botonmini2 {
+    padding: 8px 8px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    bottom: 8px;
 }
 
 .parte-articulo {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+
 }
 
 .parte-precio {
@@ -338,39 +388,13 @@ tbody {
     border: solid 2px #095382;
 }
 
-.botonmini {
-    padding: 8px 15px;
-    font-size: 18px;
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    right: 5px;
-    bottom: 0px;
-}
-
-.botonmini2 {
-    padding: 8px 15px;
-    font-size: 18px;
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    right: 5px;
-    bottom: 0px;
-
-}
 
 .okboton:hover {
     background-color: #539ff0;
 }
 
 .texto-mini {
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .titulo2 {
@@ -395,7 +419,7 @@ tbody {
     padding: 15px 15px;
     border-radius: 6px;
     margin-top: 15px;
-    
+
     color: rgba(0, 0, 0, 0.7);
 }
 
@@ -417,5 +441,71 @@ tbody {
 
     to {
         transform: translatex(0);
+    }
+}
+
+@media(max-width: 400px) {
+
+    .modal {
+        top: 0;
+        right: 0px;
+    }
+
+    .modal.active {
+        display: flex;
+    }
+
+
+    .modal-contenido {
+        bottom: 0;
+        right: 0;
+
+    }
+
+    .cuerpo {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        gap: 40px;
+
+    }
+
+    .mini-alertas {
+
+        font-size: 30px;
+    
+    }
+
+
+    .info-contenido2 {
+        width: 100%;
+        height: 250px;
+
+
+    }
+
+    .texto-mini {
+        font-size: 11px;
+    }
+
+    .icono2 {
+        font-size: 70px;
+        margin-right: 15px;
+    }
+
+    .info-contenido {
+        width: 100%;
+        height: 250px;
+
+
+    }
+
+    .texto-mini {
+        font-size: 11px;
+    }
+
+    .icono {
+        font-size: 70px;
+        margin-right: 15px;
     }
 }
