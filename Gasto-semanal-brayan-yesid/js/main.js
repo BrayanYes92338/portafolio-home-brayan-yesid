@@ -36,9 +36,6 @@ function presupuestoEstablecido() {
     });
 
     enviarPresuBtn.addEventListener('click', () => {
-
-    
-        
         preinicial = parseFloat(botonInput.value);
         saldo = preinicial
         document.getElementById("presupuestoini").textContent = formatCurrency(preinicial);
