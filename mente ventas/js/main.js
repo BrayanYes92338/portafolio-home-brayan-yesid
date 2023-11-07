@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const navtoggle = document.querySelector(".nav-toggle");
     const navmenu = document.querySelector(".nav-menu");
     const carritoMenu = document.querySelector(".carrito-menu");
@@ -39,3 +39,17 @@ document.addEventListener("DOMContentLoaded", function() {
         carritoMenu.style.display = "none";
     });
 });
+
+// const productos = [
+//     {
+//         id: 1,
+//         nombre_producto: "camisa negra de algodon",
+//         img: img / camisa_negra.jpg,
+//         precio_anterior: 25000,
+//         precio_actual: 20000,
+//     },
+
+// ];
+
+
+
