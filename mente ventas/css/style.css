@@ -135,14 +135,18 @@ body {
     background-color: #fff;
     border: 1px solid black;
     padding: 10px;
+    z-index: 999;
 }
 
-.carrito-menu {
+.carrito-menu.nav-menu_visible{
     display: block;
+
 }
+
+
 
 main {
-   margin-bottom: 280px;
+    margin-bottom: 300px;
 }
 
 
@@ -174,7 +178,7 @@ main {
     width: 100%;
 }
 
-.metodo-pago{
+.metodo-pago {
     background: white;
     display: flex;
     justify-content: center;
@@ -188,11 +192,11 @@ main {
     margin-top: 20px;
 }
 
-.caja{
+.caja {
     display: flex;
 }
 
-.iconos-efectivo{
+.iconos-efectivo {
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -204,12 +208,72 @@ main {
     cursor: pointer;
 }
 
-.texto-mp{
-margin-right: 15px;
+.texto-mp {
+    margin-right: 15px;
     font-size: 15px;
-    
+
 
 }
+
+
+.contenedores {
+    display: grid;
+    margin-top: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 10px;
+
+}
+
+.contenedor {
+    background: white;
+    width: 400px;
+    height: 580px;
+    margin-top: 20px;
+    border: solid gray 1px;
+
+}
+
+.imag {
+    width: 397px;
+    height: 310px;
+}
+
+.palabras {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.puntuacion {
+    color: #FCC249;
+    font-size: 21px;
+}
+
+.boton {
+    border: none;
+    background: #0692FE;
+    padding: 13px;
+    color: white;
+    font-size: 18px;
+    margin-top: 34px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background: #0B5ED7;
+}
+
+.p-anterior {
+    text-decoration: line-through;
+    margin-top: 10px;
+
+}
+
+.p-actual {
+    margin-top: 10px;
+}
+
 
 .pie-de-pagina {
     width: 100%;
@@ -280,10 +344,10 @@ margin-right: 15px;
     font-size: 15px;
 }
 
-hr{
-   margin-bottom: 20px;
-   border: 3px solid white;
-   border-radius: 15px;
+hr {
+    margin-bottom: 20px;
+    border: 3px solid white;
+    border-radius: 15px;
 }
 
 @keyframes slide {
