@@ -1,11 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
     const navtoggle = document.querySelector(".nav-toggle");
     const navmenu = document.querySelector(".nav-menu");
-    const carritoBtn = document.querySelector('.carrito');
-    const carritoMenu = document.querySelector('.carrito-menu');
+    const carrito = document.querySelector(".carrito");
+    const carritomenu = document.querySelector(".carrito-menu");
 
-    carritoBtn.addEventListener('click', () => {
-        carritoMenu.classList.toggle('visible');
+    carrito.addEventListener("click", () => {
+        carritomenu.classList.toggle("active");
+        if (carritomenu.classList.contains("active")) {
+            carrito.setAttribute("aria-label", "Cerrar Carrito");
+        } else {
+            carrito.setAttribute("aria-label", "Abrir Carrito");
+        }
+
     });
 
     navtoggle.addEventListener("click", () => {
@@ -77,8 +83,9 @@ function articulos() {
         button.classList.add("boton");
         button.textContent = "Agregar al Carrito";
         button.addEventListener("click", () => {
-            console.log(item.id);
-        })
+            agretabla(item);
+        });
+
         div.appendChild(img);
         div.appendChild(divp);
         divp.appendChild(h2);
@@ -98,3 +105,21 @@ function articulos() {
     document.getElementById("contenedores").appendChild(fragment)
 
 };
+
+
+function agretabla(producto) {
+    let frag = document.createDocumentFragment();
+
+    productos.forEach((item, index)=>{
+        let  td1 = document
+    
+        
+    })
+}
+
+
+function borrar(i) {
+    index = i;
+    productos.splice(index, 1);
+    document.getElementById("carrito-tabla").removeChild(frag);
+}

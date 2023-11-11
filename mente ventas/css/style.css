@@ -125,22 +125,86 @@ body {
     cursor: pointer;
 }
 
-
-
-.carrito-menu {
-    display: none;
-    position: absolute;
-    top: 100px;
-    right: 50px;
-    background-color: #fff;
-    border: 1px solid black;
-    padding: 10px;
-    z-index: 999;
+.carrito:hover {
+    color: white;
+    transition: 0.5s;
 }
 
-.carrito-menu.nav-menu_visible{
-    display: block;
+.carrito-container {
+    position: relative;
+    z-index: 3;
+}
 
+.carrito-menu {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    top: 121px;
+    right: -20px;
+    background: white;
+    border: #2c3e50 solid 1px;
+    display: none;
+  padding-bottom: 20px;
+}
+
+.carrito-menu.active{
+    display: block;
+}
+
+.prev{
+    width: 97px;
+    height: 84px;
+}
+
+table th {
+    width: 30em;
+
+}
+
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border: solid 2px #E1E1E1;
+
+
+}
+
+th,
+td {
+    border-bottom: #E1E1E1 2px solid;
+    padding: 10px;
+
+}
+
+tbody {
+    width: 100%;
+    padding: 15px 15px;
+    
+}
+
+.vaciar,.botonele {
+    border: none;
+    color: white;
+    background: #C91735;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.botonele:hover{
+    background: #e43c58;
+    transition: 0.5s;
+}
+
+.vaciar:hover {
+    background: #e43c58;
+    transition: 0.5s;
 }
 
 
@@ -277,9 +341,10 @@ main {
 
 .pie-de-pagina {
     width: 100%;
-    background: #0a141d;
+    background: white;
     position: absolute;
     bottom: 0;
+    z-index: -1;
 }
 
 .pie-de-pagina .grupo-1 {
@@ -301,17 +366,17 @@ main {
 }
 
 .pie-de-pagina .grupo-1 .box figure img {
-    width: 250px;
+    width: 290px;
 }
 
 .pie-de-pagina .grupo-1 .box h2 {
-    color: white;
+    color: #73737B;
     margin-bottom: 25px;
     font-size: 20px;
 }
 
 .pie-de-pagina .grupo-1 .box p {
-    color: #efefef;
+    color: #73737B;
     margin-bottom: 10px;
 }
 
@@ -321,9 +386,9 @@ main {
     width: 45px;
     height: 45px;
     line-height: 45px;
-    color: #fff;
+    color: #73737B;
     margin-right: 10px;
-    background-color: #0d2033;
+    background-color: #EAEAEA;
     text-align: center;
     transition: all 300ms ease;
     border-bottom: white solid 4px;
@@ -334,10 +399,11 @@ main {
 }
 
 .pie-de-pagina .grupo-2 {
-    background-color: #0a1a2a;
+    background-color: #EBEBEB;
     padding: 15px 10px;
     text-align: center;
-    color: white;
+    color: gray;
+    font-weight: bold;
 }
 
 .pie-de-pagina .grupo-2 small {
@@ -346,7 +412,7 @@ main {
 
 hr {
     margin-bottom: 20px;
-    border: 3px solid white;
+    border: 3px solid #73737B;
     border-radius: 15px;
 }
 
@@ -428,7 +494,6 @@ hr {
         display: block;
         margin-top: 30px;
         margin-right: 15px;
-
     }
 
     .nav-menu {
