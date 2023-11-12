@@ -136,7 +136,7 @@ body {
 }
 
 .carrito-menu {
-    width: 500px;
+    width: 580px;
     height: auto;
     position: absolute;
     top: 121px;
@@ -144,14 +144,14 @@ body {
     background: white;
     border: #2c3e50 solid 1px;
     display: none;
-  padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
-.carrito-menu.active{
+.carrito-menu.active {
     display: block;
 }
 
-.prev{
+.prev {
     width: 97px;
     height: 84px;
 }
@@ -181,10 +181,11 @@ td {
 tbody {
     width: 100%;
     padding: 15px 15px;
-    
+
 }
 
-.vaciar,.botonele {
+.vaciar,
+.botonele {
     border: none;
     color: white;
     background: #C91735;
@@ -197,7 +198,7 @@ tbody {
     margin-top: 10px;
 }
 
-.botonele:hover{
+.botonele:hover {
     background: #e43c58;
     transition: 0.5s;
 }
@@ -451,6 +452,13 @@ hr {
 
 }
 
+@media (max-width:1650px) {
+    .contenedores {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
 @media screen and(max-width: 800px) {
     .pie-de-pagina .grupo-1 {
         width: 90%;
@@ -525,5 +533,41 @@ hr {
     .nav-menu_visible {
         left: 0;
     }
+
+}
+
+@media (max-width:500px) {
+
+
+    .busc {
+        width: auto;
+    }
+
+    .slider-box {
+        width: 430px;
+    }
+
+    .metodo-pago {
+       display: grid;
+       grid-template-columns: 2, 2fr;
+        width: 400px;
+        height: 290px;
+    }
+
+    .texto-mp {
+        font-size: 14px;
+    }
+
+    .contenedores {
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 700px;
+    }
+
+    .pie-de-pagina .grupo-1 {
+        
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
 
 }

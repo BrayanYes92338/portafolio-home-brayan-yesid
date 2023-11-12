@@ -38,9 +38,11 @@ let productos = [
     { id: 6, img: "./img/hoodie.jpg", nombre: "Sudadera Amphibia Team Marcy", nombre_vendedor: "Player fan de amphibia", precio_anterior: 130000, precio_actual: 90000 },
     { id: 7, img: "./img/patriot-ssd-240.png", nombre: "Disco Duro SSD PATRIOT Burst de 240GB", nombre_vendedor: "JTheRed", precio_anterior: 250000, precio_actual: 200000 },
     { id: 8, img: "./img/nintendo switch.jpg", nombre: "Nintendo Switch", nombre_vendedor: "David", precio_anterior: 1500000, precio_actual: 1400000 },
+    { id: 9, img: "./img/ps5.jpg", nombre: "Play Station 5", nombre_vendedor: "Juegos Ya", precio_anterior: 5500000, precio_actual: 2500000 },
+
 ];
 
-
+let carrito = [];
 
 function articulos() {
     let fragment = document.createDocumentFragment();
@@ -107,19 +109,67 @@ function articulos() {
 };
 
 
-function agretabla(producto) {
-    let frag = document.createDocumentFragment();
-
-    productos.forEach((item, index)=>{
-        let  td1 = document
-    
-        
-    })
+function agretabla(item) {
+ const objeto = carrito.find((articulo)=>articulo.id=== item.id)
+    if(objeto){
+objeto.cantidad +=1
+    }else {
+        let objetos = {
+            id: item.id,
+            img: item.img,
+            nombre: item.nombre,
+            precio_actual: formatCurrency(item.precio_actual),
+            cantidad: 1,
+        }
+        carrito.push(objetos)
+    }
+    document.getElementById("carrito-tabla").innerHTML = "";
+    pintarcarrito()
 }
 
 
+
+function pintarcarrito() {
+    let frag = document.createDocumentFragment();
+    carrito.forEach((item, index) => {
+        let tr = document.createElement("tr")
+        let timagen = document.createElement("td");
+        let imagen = document.createElement("img");
+        imagen.src = item.img;
+        timagen.appendChild(imagen);
+        imagen.classList.add("prev");
+        let tnombre = document.createElement("td");
+        tnombre.textContent = item.nombre;
+        let tprecio = document.createElement("td");
+        tprecio.textContent = item.precio_actual;
+        let tcantidad = document.createElement("td");
+        tcantidad.textContent = item.cantidad;
+        let tvaciar = document.createElement("td");
+        let boton = document.createElement("button");
+        boton.textContent = "Eliminar";
+        boton.classList.add("botonele");
+        boton.addEventListener("click", () => {
+            borrar(index);
+        })
+        tr.appendChild(timagen);
+        tr.appendChild(tnombre);
+        tr.appendChild(tprecio);
+        tr.appendChild(tcantidad);
+        tr.appendChild(tvaciar);
+        tvaciar.appendChild(boton);
+        frag.appendChild(tr);
+
+    })
+
+    document.getElementById("carrito-tabla").appendChild(frag);
+
+}
+
+
+
 function borrar(i) {
-    index = i;
-    productos.splice(index, 1);
-    document.getElementById("carrito-tabla").removeChild(frag);
+    let index = i;
+    carrito.splice(index, 1);
+    document.getElementById("carrito-tabla").innerHTML = "";
+    pintarcarrito();
 }
