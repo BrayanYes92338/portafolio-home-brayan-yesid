@@ -108,18 +108,24 @@ function articulos() {
 
 };
 
+function calcularTotalCarrito() {
+    let total = carrito.reduce((sum, item) => sum + item.precio_total, 0);
+    return total;
+}
 
 function agretabla(item) {
- const objeto = carrito.find((articulo)=>articulo.id=== item.id)
-    if(objeto){
-objeto.cantidad +=1
-    }else {
+    const objeto = carrito.find((articulo) => articulo.id === item.id)
+    if (objeto) {
+        objeto.cantidad += 1
+        objeto.precio_total = objeto.precio_actual * objeto.cantidad; 
+    } else {
         let objetos = {
             id: item.id,
             img: item.img,
             nombre: item.nombre,
-            precio_actual: formatCurrency(item.precio_actual),
+            precio_actual: item.precio_actual,
             cantidad: 1,
+            precio_total: item.precio_actual 
         }
         carrito.push(objetos)
     }
@@ -127,10 +133,9 @@ objeto.cantidad +=1
     pintarcarrito()
 }
 
-
-
 function pintarcarrito() {
     let frag = document.createDocumentFragment();
+
     carrito.forEach((item, index) => {
         let tr = document.createElement("tr")
         let timagen = document.createElement("td");
@@ -141,7 +146,7 @@ function pintarcarrito() {
         let tnombre = document.createElement("td");
         tnombre.textContent = item.nombre;
         let tprecio = document.createElement("td");
-        tprecio.textContent = item.precio_actual;
+        tprecio.textContent = formatCurrency(item.precio_total);
         let tcantidad = document.createElement("td");
         tcantidad.textContent = item.cantidad;
         let tvaciar = document.createElement("td");
@@ -162,14 +167,23 @@ function pintarcarrito() {
     })
 
     document.getElementById("carrito-tabla").appendChild(frag);
-
+    const totalElement = document.getElementById("ptotal");
+    totalElement.textContent = formatCurrency(calcularTotalCarrito());
+    
 }
+
 
 
 
 function borrar(i) {
     let index = i;
     carrito.splice(index, 1);
+    document.getElementById("carrito-tabla").innerHTML = "";
+    pintarcarrito();
+}
+
+function vaciarcarro() {
+    carrito = [];
     document.getElementById("carrito-tabla").innerHTML = "";
     pintarcarrito();
 }

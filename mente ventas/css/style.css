@@ -136,7 +136,7 @@ body {
 }
 
 .carrito-menu {
-    width: 580px;
+    width: auto;
     height: auto;
     position: absolute;
     top: 121px;
@@ -208,7 +208,12 @@ tbody {
     transition: 0.5s;
 }
 
-
+.ptotal{
+    display: flex;
+    font-size: 19px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
 
 main {
     margin-bottom: 300px;
