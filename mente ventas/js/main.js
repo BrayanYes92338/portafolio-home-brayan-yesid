@@ -36,8 +36,8 @@ let productos = [
     { id: 4, img: "./img/control xbox.jpg", nombre: "Control Xbox", nombre_vendedor: "Player fan de amphibia", precio_anterior: 150000, precio_actual: 145000 },
     { id: 5, img: "./img/R.jpg", nombre: "Gibson SG modelo standart", nombre_vendedor: "Bauti", precio_anterior: 12400000, precio_actual: 11800000 },
     { id: 6, img: "./img/hoodie.jpg", nombre: "Sudadera Amphibia Team Marcy", nombre_vendedor: "Player fan de amphibia", precio_anterior: 130000, precio_actual: 90000 },
-    { id: 7, img: "./img/patriot-ssd-240.png", nombre: "Disco Duro SSD PATRIOT Burst de 240GB", nombre_vendedor: "JTheRed", precio_anterior: 250000, precio_actual: 200000 },
-    { id: 8, img: "./img/nintendo switch.jpg", nombre: "Nintendo Switch", nombre_vendedor: "David", precio_anterior: 1500000, precio_actual: 1400000 },
+    { id: 7, img: "./img/patriot-ssd-240.png", nombre: "Disco Duro SSD PATRIOT ", nombre_vendedor: "JTheRed", precio_anterior: 250000, precio_actual: 200000 },
+    { id: 8, img: "./img/nintendo switch.jpg", nombre: "Nintendo Switch", nombre_vendedor: "David", precio_anterior: 1500000, precio_actual: 1400000},
     { id: 9, img: "./img/ps5.jpg", nombre: "Play Station 5", nombre_vendedor: "Juegos Ya", precio_anterior: 5500000, precio_actual: 2500000 },
 
 ];
