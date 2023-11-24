@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas Veterinarias</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="./img/huellitas sanas v4.ico">
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo"><img src="./img/huellitas sanas v6.png" alt="" class="img"></a>
+            <button class="nav-toggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Inicio</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Agendar Cita</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Testimonios</a></li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Galeria</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="alertas">
+            <div class="modal">
+                <div class="modal-content alerta">
+                    <span class="closeicon"><i class="fa fa-times"></i></span>
+                    <div class="modal-body">
+                        <span class="icon"><i class="fa fa-exclamation-circle"></i></span>
+                        <div class="right-items">
+                            <div class="titulo-alert">
+                                <h1>¡Alerta!</h1>
+                            </div>
+                            <div class="texto-alert">
+                                <h3 id="alert"></h3>
+                            </div>
+                            <button class="okbtn">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal modal2">
+                <div class="modal-content exito">
+                    <span class="closeicon2"><i class="fa fa-times"></i></span>
+                    <div class="modal-body">
+                        <span class="icon"><i class="fa fa-thumbs-up"></i></span>
+                        <div class="right-items">
+                            <div class="titulo-alert">
+                                <h1>¡Exito!</h1>
+                            </div>
+                            <div class="texto-alert">
+                                <h3 id="alert2"></h3>
+                            </div>
+                            <button class="okbtn2">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal modal3">
+                <div class="modal-content error">
+                    <span class="closeicon3"><i class="fa fa-times"></i></span>
+                    <div class="modal-body">
+                        <span class="icon"><i class="fa fa-exclamation-triangle"></i></span>
+                        <div class="right-items">
+                            <div class="titulo-alert">
+                                <h1>¡Error!</h1>
+                            </div>
+                            <div class="texto-alert">
+                                <h3 id="alert3"></h3>
+                            </div>
+                            <button class="okbtn3">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="titulop">Veterinaria Huellitas Sanas </h1>
+        <button class="boton">Agendar Cita</button>
+        <div class="formulario">
+            <form action="">
+                <span class="cerrar"><i class="fa fa-times"></i></span>
+                <h1 class="titulod">Datos de la Mascota</h1>
+                <div class="input-group">
+                    <label for="">Nombre de la Mascota</label>
+                    <input type="text" placeholder="Ingrese nombre de su mascota">
+                    <label for="">Telefono</label>
+                    <input type="tel" placeholder="Ingrese su numero de telefono">
+                    <label for="">Tipo de Mascota</label>
+                    <select name="" id="">
+                        <option disabled selected hidden value="">Seleccione su Mascota</option>
+                        <option value="">Gato</option>
+                        <option value="">Perro</option>
+                        <option value="">Ave</option>
+                        <option value="">Reptil</option>
+                        <option value="">Otro</option>
+                    </select>
+                    <label for="">Fecha</label>
+                    <input type="date">
+                    <label for="">Hora</label>
+                    <input type="time">
+                    <label for="">Sintomas</label>
+                    <textarea name="Descri" id="Descri" cols="30" rows="10"
+                    placeholder="Ingrese una Breve Descripcion"></textarea>
+                    <div class="botones">
+                        <button class="boton-agregar" >Agregar</button>
+                        <button class="boton-cerrar">Cerrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <section>
+            <h1>Testimonios</h1>
+            <div class="comentarios">
+                <div class="contenedor">
+                    <h2>Lucila Diaz</h2>
+                    <div class="puntucacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, distinctio? Expedita ducimus
+                        tempora consectetur fuga incidunt aspernatur. Tenetur doloribus necessitatibus aperiam. Sunt
+                        dolores corrupti ut. Aliquam, reprehenderit esse! Natus, inventore.</p>
+                </div>
+                <div class="contenedor">
+                    <h2>Nidia Benitez</h2>
+                    <div class="puntucacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, distinctio? Expedita ducimus
+                        tempora consectetur fuga incidunt aspernatur. Tenetur doloribus necessitatibus aperiam. Sunt
+                        dolores corrupti ut. Aliquam, reprehenderit esse! Natus, inventore.</p>
+                </div>
+                <div class="contenedor">
+                    <h2>Annie Ballesteros</h2>
+                    <div class="puntucacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, distinctio? Expedita ducimus
+                        tempora consectetur fuga incidunt aspernatur. Tenetur doloribus necessitatibus aperiam. Sunt
+                        dolores corrupti ut. Aliquam, reprehenderit esse! Natus, inventore.</p>
+                </div>
+            </div>
+        </section>
+        <section class="sgaleria">
+            <h1>Galeria</h1>
+        </section>
+    </main>
+    <footer class="pie-de-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#"><img src="./img/huellitas sanas v6.png" alt=""></a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE ESTA PÁGINA</h2>
+                <hr>
+                <P>Este sitio web es parte de un proyecto educativo y no representa una veterinaria real. Todos los
+                    productos y detalles presentados son ficticios y se han creado con fines exclusivamente académicos.
+                    No es posible realizar citas reales a través de este sitio. Para cualquier consulta o pregunta
+                    relacionada con este proyecto o diseño de pagina web, no dudes en ponerte en contacto con nosotros
+                    escribiendo a: caballeroyesid7@gmail.com. Agradecemos tu comprensión y colaboración.
+                </P>
+            </div>
+            <div class="box">
+                <h2>NUESTRAS REDES SOCIALES</h2>
+                <hr>
+                <div class="red-social">
+                    <a href=""> <i class="fab fa-youtube"></i>
+                    </a><a href=""><i class="fab fa-facebook"></i>
+                    </a><a href=""> <i class="fab fa-instagram"></i></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>Copyright &#169 2023. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+</body>
+
+</html>
