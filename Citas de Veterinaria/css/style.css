@@ -9,18 +9,18 @@ body {
     padding: 90px 0;
     position: relative;
     min-height: 100vh;
-    background: #EBEBEB;
+    background: white;
 
 }
 
 .header {
-    background: linear-gradient(to top,  #0373DC,#10A3FA);
+    background: linear-gradient(to top, #BDBDBD, white);
     height: 120px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    border-bottom: #093866 solid 3px;
+    border-bottom: gray solid 3px;
     z-index: 2;
 }
 
@@ -32,8 +32,9 @@ body {
 }
 
 .nav-link {
-    color: white;
+    color: gray;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .logo {
@@ -67,7 +68,7 @@ body {
 }
 
 .nav-menu-link:hover {
-    background-color: #5AB6E7;
+    background-color: white;
     transition: 0.5s;
 
 }
@@ -221,10 +222,11 @@ main {
     text-align: center;
 }
 
-.titulop {
-    margin-top: 90px;
+.titulosp {
+    font-size: 40px;
+    margin-top: 50px;
+    color: rgb(105, 104, 104);
 }
-
 
 .boton {
     background: #D22E2E;
@@ -262,13 +264,19 @@ main {
 
 }
 
-form {
+.form {
     padding: 40px 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     text-align: center;
     width: 450px;
     background-color: white;
+    display: none;
+
+}
+
+.form.active{
+    display: block;
 }
 
 .titulod {
@@ -328,7 +336,7 @@ textarea {
     background: #5AB6E7;
 }
 
-.boton-cerrar{
+.boton-cerrar {
     border: none;
     font-size: 18px;
     padding: 8px 15px;
@@ -344,24 +352,73 @@ textarea {
     background: #E76161;
 }
 
+
+
 .comentarios {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .contenedor {
     background: white;
-    width: 400px;
-    height: 280px;
+    width: 550px;
+    height: 220px;
     margin-top: 20px;
-    border: solid gray 1px;
+    border: solid gray 2px;
+    display: flex;
+
 }
 
+.grupo-1 {
+    display: flex;
+    gap: 13px;
+}
+
+.dueño {
+    text-align: left;
+    margin-top: 14px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: gray;
+}
+
+.puntuacion {
+    font-size: 20px;
+    color: #FCC249;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.fperfil {
+    width: 210px;
+    height: 210px;
+}
 
 .sgaleria {
     margin-bottom: 360px;
+}
+
+.testimonio {
+    margin-top: 20px;
+    text-align: center;
+
+
+}
+
+.contenedores-mascot{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.fotomascota{
+    height: 350px;
+    width: 350px;
+    border: solid gray 3px;
 }
 
 .pie-de-pagina {
@@ -392,6 +449,7 @@ textarea {
 
 .pie-de-pagina .grupo-1 .box figure img {
     width: 290px;
+    height: 150px;
 }
 
 .pie-de-pagina .grupo-1 .box h2 {

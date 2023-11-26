@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="./img/huellitas sanas v4.ico">
-    <script src="./js/main.js" defer></script>
+<script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -80,10 +80,10 @@
                 </div>
             </div>
         </div>
-        <h1 class="titulop">Veterinaria Huellitas Sanas </h1>
-        <button class="boton">Agendar Cita</button>
+        <h1 class="titulosp">Veterinaria Huellitas Sanas </h1>
+        <button class="boton" onclick="bform()">Agendar Cita</button>
         <div class="formulario">
-            <form action="">
+            <form class="form" action="">
                 <span class="cerrar"><i class="fa fa-times"></i></span>
                 <h1 class="titulod">Datos de la Mascota</h1>
                 <div class="input-group">
@@ -106,60 +106,112 @@
                     <input type="time">
                     <label for="">Sintomas</label>
                     <textarea name="Descri" id="Descri" cols="30" rows="10"
-                    placeholder="Ingrese una Breve Descripcion"></textarea>
+                        placeholder="Ingrese una Breve Descripcion"></textarea>
                     <div class="botones">
-                        <button class="boton-agregar" >Agregar</button>
+                        <button class="boton-agregar">Agregar</button>
                         <button class="boton-cerrar">Cerrar</button>
                     </div>
                 </div>
             </form>
         </div>
         <section>
-            <h1>Testimonios</h1>
+            <div></div>
+            <div></div>
+            <div></div>
+            <h1 class="titulosp">Testimonios</h1>
             <div class="comentarios">
                 <div class="contenedor">
-                    <h2>Lucila Diaz</h2>
-                    <div class="puntucacion">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="perfil">
+                        <img src="./img/foto-1.png" alt="" class="fperfil">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, distinctio? Expedita ducimus
-                        tempora consectetur fuga incidunt aspernatur. Tenetur doloribus necessitatibus aperiam. Sunt
-                        dolores corrupti ut. Aliquam, reprehenderit esse! Natus, inventore.</p>
+                    <div class="ptexto">
+                        <div class="grupo-1">
+                            <p class="dueño">- Marcos Duarte</p>
+                            <div class="puntuacion">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonio">"Excelente atención para nuestras mascotas. El equipo de la veterinaria es
+                            amable,
+                            profesional y siempre se preocupa por el bienestar de nuestros peludos amigos."</p>
+                    </div>
                 </div>
                 <div class="contenedor">
-                    <h2>Nidia Benitez</h2>
-                    <div class="puntucacion">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="perfil">
+                        <img src="./img/foto-3.png" alt="" class="fperfil">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, distinctio? Expedita ducimus
-                        tempora consectetur fuga incidunt aspernatur. Tenetur doloribus necessitatibus aperiam. Sunt
-                        dolores corrupti ut. Aliquam, reprehenderit esse! Natus, inventore.</p>
+                    <div class="ptexto">
+                        <div class="grupo-1">
+                            <p class="dueño">- Nico Robin</p>
+                            <div class="puntuacion">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonio">"Mi experiencia en esta veterinaria fue excepcional. Los veterinarios son
+                            muy dedicados y se nota que aman lo que hacen. Recomiendo sus servicios a todos los dueños
+                            de mascotas."</p>
+                    </div>
                 </div>
                 <div class="contenedor">
-                    <h2>Annie Ballesteros</h2>
-                    <div class="puntucacion">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="perfil">
+                        <img src="./img/foto-4.png" alt="" class="fperfil">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, distinctio? Expedita ducimus
-                        tempora consectetur fuga incidunt aspernatur. Tenetur doloribus necessitatibus aperiam. Sunt
-                        dolores corrupti ut. Aliquam, reprehenderit esse! Natus, inventore.</p>
+                    <div class="ptexto">
+                        <div class="grupo-1">
+                            <p class="dueño">- Yamato</p>
+                            <div class="puntuacion">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonio">"Increíble servicio veterinario. Siempre nos dan la tranquilidad de que
+                            nuestras mascotas están en buenas manos. Gracias por el cuidado y la atención
+                            personalizada."</p>
+                    </div>
+                </div>
+                <div class="contenedor">
+                    <div class="perfil">
+                        <img src="./img/foto-2.png" alt="" class="fperfil">
+                    </div>
+                    <div class="ptexto">
+                        <div class="grupo-1">
+                            <p class="dueño">- Toony Chopper</p>
+                            <div class="puntuacion">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonio">"Mi gato recibió la mejor atención en esta veterinaria. El personal es
+                            conocedor y se toma el tiempo necesario para explicar cada procedimiento. Definitivamente,
+                            un lugar de confianza."</p>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="sgaleria">
-            <h1>Galeria</h1>
+            <h1 class="titulosp">Galeria</h1>
+            <div class="contenedores-mascot">
+                <img src="./img/mascota-1.png" alt="" class="fotomascota">
+                <img src="./img/mascota-2.png" alt="" class="fotomascota">
+                <img src="./img/mascotas-3.jpg" alt="" class="fotomascota">
+                <img src="./img/mascotas-4.jpg" alt="" class="fotomascota">
+                <img src="./img/mascotas-5.jpg" alt="" class="fotomascota">
+                <img src="./img/mascotas-6.jpg" alt="" class="fotomascota">
+            </div>
         </section>
     </main>
     <footer class="pie-de-pagina">
