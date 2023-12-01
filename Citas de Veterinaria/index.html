@@ -62,25 +62,9 @@
                     </div>
                 </div>
             </div>
-            <div class="modal modal3">
-                <div class="modal-content error">
-                    <span class="closeicon3"><i class="fa fa-times"></i></span>
-                    <div class="modal-body">
-                        <span class="icon"><i class="fa fa-exclamation-triangle"></i></span>
-                        <div class="right-items">
-                            <div class="titulo-alert">
-                                <h1>¡Error!</h1>
-                            </div>
-                            <div class="texto-alert">
-                                <h3 id="alert3"></h3>
-                            </div>
-                            <button class="okbtn3">Aceptar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <h1 class="titulosp">Veterinaria Huellitas Sanas </h1>
+ 
         <button class="boton" onclick="bform()">Agendar Cita</button>
         <div class="formulario">
             <form class="form" action="">
@@ -88,36 +72,44 @@
                 <h1 class="titulod">Datos de la Mascota</h1>
                 <div class="input-group">
                     <label for="">Nombre de la Mascota</label>
-                    <input type="text" placeholder="Ingrese nombre de su mascota">
+                    <input type="text" id="nombre-mascota" placeholder="Ingrese nombre de su mascota">
+                    <label for="">Nombre del Dueño</label>
+                    <input type="text" id="nombre-dueño" placeholder="Ingrese el nombre del dueño">
                     <label for="">Telefono</label>
-                    <input type="tel" placeholder="Ingrese su numero de telefono">
+                    <input type="tel" id="num-tel" pattern="[0-9]+" maxlength="10" placeholder="Ingrese su numero de telefono">
                     <label for="">Tipo de Mascota</label>
-                    <select name="" id="">
+                    <select name="" id="tipo-animal">
                         <option disabled selected hidden value="">Seleccione su Mascota</option>
-                        <option value="">Gato</option>
-                        <option value="">Perro</option>
-                        <option value="">Ave</option>
-                        <option value="">Reptil</option>
-                        <option value="">Otro</option>
+                        <option value="gato">Gato</option>
+                        <option value="perro">Perro</option>
+                        <option value="ave">Ave</option>
+                        <option value="reptil">Reptil</option>
+                        <option value="otro">Otro</option>
                     </select>
                     <label for="">Fecha</label>
-                    <input type="date">
+                    <input type="date" id="fecha">
                     <label for="">Hora</label>
-                    <input type="time">
+                    <input type="time" id="hora">
                     <label for="">Sintomas</label>
-                    <textarea name="Descri" id="Descri" cols="30" rows="10"
-                        placeholder="Ingrese una Breve Descripcion"></textarea>
+                    <textarea name="Descri" id="descri" cols="30" rows="10"
+                        placeholder="Ingrese Los Sintomas de la Mascota"></textarea>
                     <div class="botones">
-                        <button class="boton-agregar">Agregar</button>
-                        <button class="boton-cerrar">Cerrar</button>
+                        <button class="boton-agregar" onclick="alertas()">Agregar</button>
+                        <button class="boton-cerrar">Salir</button>
                     </div>
                 </div>
             </form>
         </div>
+        <div class="filtrar">
+            <h1 class="titulosp">Filtrar Por</h1>
+            <input type="radio" name="filtro"> Abiertas 
+            <input type="radio" name="filtro"> Cerradas
+            <input type="radio" name="filtro"> Canceladas
+        </div>
         <section>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div id="abierto"></div>
+            <div id="cerrado"></div>
+            <div id="canceladas"></div>
             <h1 class="titulosp">Testimonios</h1>
             <div class="comentarios">
                 <div class="contenedor">
@@ -205,6 +197,7 @@
         <section class="sgaleria">
             <h1 class="titulosp">Galeria</h1>
             <div class="contenedores-mascot">
+                <img src="./img/mascotas-7.jpg" alt="" class="fotomascota">
                 <img src="./img/mascota-1.png" alt="" class="fotomascota">
                 <img src="./img/mascota-2.png" alt="" class="fotomascota">
                 <img src="./img/mascotas-3.jpg" alt="" class="fotomascota">
