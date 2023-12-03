@@ -18,11 +18,7 @@ function bform() {
 
     boton.addEventListener("click", () => {
         form.classList.add("active");
-        if (form.classList.contains("active")) {
-            boton.setAttribute("aria-label", "Cerrar Formulario");
-        } else {
-            boton.setAttribute("aria-label", "Abrir Formulario");
-        }
+
     })
 
     cerrar.addEventListener("click", () => {
@@ -44,8 +40,16 @@ function bform() {
 let tipoMascotas = [{ img: "./img/istockphoto-963071796-170667a.jpg", tipo: "Perro" },
 { img: "./img/R.jpg", tipo: "Gato" },
 { img: "./img/depositphotos_152522110-stock-illustration-cute-blue-bird-cartoon-flying.jpg", tipo: "Ave" },
-{ img: "./img/R(1).jpg", tipo: "Reptil" },
+{ img: "./img/Reptil.jpg", tipo: "Reptil" },
 { img: "./img/OIP.jpg", tipo: "Otro" }];
+
+function tenerimg(tipoMascotaSeleccionado) {
+    let Mascen = tipoMascotas.find(mascota => mascota.tipo === tipoMascotaSeleccionado);
+
+    if (Mascen) {
+        return Mascen.img;
+    }
+}
 
 let mascotas = [];
 let indice = null;
@@ -59,8 +63,10 @@ function formulario() {
     let fecha = document.getElementById("fecha").value;
     let hora = document.getElementById("hora").value;
     let descri = document.getElementById("descri").value;
+    let imagenurl = tenerimg(tipo);
 
-    if(oper === true){
+
+    if (oper === true) {
         mascotas[indice].nombreMascota = document.getElementById("nombre-mascota").value;
         mascotas[indice].nombreDueño = document.getElementById("nombre-dueño").value;
         mascotas[indice].telefono = document.getElementById("num-tel").value;
@@ -68,7 +74,7 @@ function formulario() {
         mascotas[indice].fecha = document.getElementById("fecha").value;
         mascotas[indice].hora = document.getElementById("hora").value;
         mascotas[indice].sintomas = document.getElementById("descri").value;
-    }else {
+    } else {
         mascotas.push({
             nombreMascota: namemas,
             nombreDueño: namedue,
@@ -76,10 +82,147 @@ function formulario() {
             tipoAnimal: tipo,
             fecha: fecha,
             hora: hora,
-            sintomas: descri
+            sintomas: descri,
+            imagen: imagenurl
         })
     }
     console.log(mascotas);
+    document.getElementById("nombre-mascota").value = "";
+    document.getElementById("nombre-dueño").value = "";
+    document.getElementById("num-tel").value = "";
+    document.getElementById("tipo-animal").value = "";
+    document.getElementById("fecha").value = "";
+    document.getElementById("hora").value = "";
+    document.getElementById("descri").value = "";
+    contenedores();
+    oper = false;
+}
+
+function contenedores() {
+    let fragment = document.createDocumentFragment();
+    document.getElementById("abierto").innerHTML = "";
+    mascotas.forEach((item, index) => {
+
+        let dcontenedor = document.createElement("div");
+        dcontenedor.classList.add("contened");
+        let dconttex = document.createElement("div");
+        dconttex.classList.add("cont-texto");
+        let dvmas = document.createElement("div");
+        dvmas.classList.add("mascota");
+        let ifcat = document.createElement("img");
+        ifcat.classList.add("fcat");
+        ifcat.src = item.imagen;
+        let pnombrem = document.createElement("p");
+       pnombrem.textContent = item.nombreMascota;
+        let dinfom = document.createElement("div");
+        dinfom.classList.add("info-mas");
+        let ptipo = document.createElement("p");
+        ptipo.textContent = "Tipo:"
+        let pntipo = document.createElement("p");
+        pntipo.textContent = item.tipoAnimal;
+        let cont = document.createElement("div");
+        cont.classList.add("cont");
+        let dpropi = document.createElement("div");
+        dpropi.classList.add("propietario");
+        let iuser = document.createElement("i");
+        iuser.classList.add("fas", "fa-user", "mini-icon");
+        let dconte = document.createElement("div");
+        dconte.classList.add("conte");
+        let dconte2 = document.createElement("div");
+        let dconte3 = document.createElement("div");
+        let dconte4 = document.createElement("div");
+        let ppropi = document.createElement("p");
+        ppropi.textContent = "Propietario";
+        let npropi = document.createElement("p");
+        npropi.textContent = item.nombreDueño;
+        let dfecha = document.createElement("div");
+        dfecha.classList.add("fecha");
+        let ifecha = document.createElement("i");
+      ifecha.classList.add("far", "fa-calendar", "mini-icon");
+        let pcalen = document.createElement("p");
+        pcalen.textContent = "Calendario";
+        let calen = document.createElement("p");
+        calen.textContent = item.fecha;
+        let dcontacto = document.createElement("div");
+        dcontacto.classList.add("contacto");
+        let iphone = document.createElement("i");
+        iphone.classList.add("fas", "fa-phone","mini-icon");
+        let pconta = document.createElement("p");
+        pconta.textContent = "Contacto";
+        let ncont = document.createElement("p");
+        ncont.textContent = item.telefono;
+        let dhora = document.createElement("div");
+        dhora.classList.add("hora");
+        let ihora = document.createElement("i");
+        ihora.classList.add("far", "fa-clock", "mini-icon");
+        let phora = document.createElement("p");
+        phora.textContent = "Hora";
+        let hora = document.createElement("p");
+        hora.textContent = item.hora;
+        let tsinto = document.createElement("h1");
+        tsinto.textContent = "Sintomas:";
+        let texta = document.createElement("textarea");
+        texta.setAttribute("readonly", "readonly");
+        texta.textContent = item.sintomas;
+        texta.classList.add("texta");
+        let dboton2 = document.createElement("div");
+        dboton2.classList.add("botones2");
+        let beditar = document.createElement("button");
+        beditar.textContent = "Editar";
+        beditar.classList.add("editar");
+        beditar.addEventListener("click", () => {
+            edicion(item, index);
+        })
+        let selec = document.createElement("select");
+        selec.classList.add("select");
+        let op1 = document.createElement("option");
+        op1.textContent = "Abierta"
+        let op2 = document.createElement("option");
+        op2.textContent = "Cerrada"
+        let op3 = document.createElement("option");
+        op3.textContent = "Cancelada";
+
+        dcontenedor.appendChild(dconttex);
+        dconttex.appendChild(dvmas);
+        dvmas.appendChild(ifcat);
+        dvmas.appendChild(pnombrem);
+        dvmas.appendChild(dinfom);
+        dinfom.appendChild(ptipo);
+        dinfom.appendChild(pntipo);
+        dconttex.appendChild(cont);
+        cont.appendChild(dpropi);
+        dpropi.appendChild(iuser);
+        dpropi.appendChild(dconte);
+        dconte.appendChild(ppropi);
+        dconte.appendChild(npropi);
+        cont.appendChild(dfecha);
+        dfecha.appendChild(ifecha);
+        dfecha.appendChild(dconte2)
+        dconte2.appendChild(pcalen);
+        dconte2.appendChild(calen);
+        cont.appendChild(dcontacto);
+        dcontacto.appendChild(iphone);
+        dcontacto.appendChild(dconte3);
+        dconte3.appendChild(pconta);
+        dconte3.appendChild(ncont);
+        cont.appendChild(dhora);
+        dhora.appendChild(ihora);
+        dhora.appendChild(dconte4);
+        dconte4.appendChild(phora);
+        dconte4.appendChild(hora);
+        dcontenedor.appendChild(tsinto);
+        dcontenedor.appendChild(texta);
+        dcontenedor.appendChild(dboton2);
+        dboton2.appendChild(beditar);
+        dboton2.appendChild(selec);
+        selec.appendChild(op1);
+        selec.appendChild(op2);
+        selec.appendChild(op3);
+        fragment.appendChild(dcontenedor);
+
+
+    });
+    document.getElementById("abierto").appendChild(fragment);
 
 }
 
@@ -199,7 +342,7 @@ function alertas() {
             modal.classList.remove("active");
         }, 5000);
 
-    } else if (fecha_select < fecha_actual) {
+    } else if (fecha_select < fecha_actual.setHours(0, 0, 0, 0)) {
         document.getElementById("alert").textContent = "La fecha seleccionada no puede ser menor a la fecha actual";
         modal.classList.add("active");
         setTimeout(() => {
@@ -239,5 +382,20 @@ function alertas() {
             modal2.classList.remove("active");
         }, 5000);
     }
+}
+
+function edicion (item,i){
+    oper= true;
+    indice = i;
+    document.getElementById("nombre-mascota").value = item.nombreMascota;
+    document.getElementById("nombre-dueño").value = item.nombreDueño;
+    document.getElementById("num-tel").value = item.telefono;
+    document.getElementById("tipo-animal").value = item.tipoAnimal;
+    document.getElementById("fecha").value = item.fecha;
+    document.getElementById("hora").value = item.hora;
+    document.getElementById("descri").value = item.sintomas;
+   
+
+
 }
 

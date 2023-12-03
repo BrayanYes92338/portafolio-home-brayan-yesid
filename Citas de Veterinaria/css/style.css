@@ -340,6 +340,93 @@ textarea {
     background: #E76161;
 }
 
+#abierto{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 5px;
+}
+
+.contened{
+    border: solid gray 3px;
+    width: 550px;
+    height: 420px;
+    padding: 20px 20px;
+    display: grid;
+}
+
+.fcat{
+    width: 120px;
+    height: 120px;
+}
+
+
+.info-mas{
+    display: flex;
+margin-left: 60px;
+margin-top: 4px;
+}
+
+.cont-texto{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+.cont{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+}
+
+.sintomas{
+    text-align: center;
+    font-size: 20px;
+}
+
+.texta {
+    margin-top: 20px;
+    resize: none;
+    font-size: 16px;
+    height: 100px;
+}
+
+.botones2{
+    margin-top: 5px;
+    text-align: center;
+}
+
+.editar{
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: #3CB662;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.select{
+    padding: 10px 10px;
+    margin-left: 10px;
+    background: white;
+    border: 2px solid gray;
+
+}
+
+.propietario, .fecha, .contacto, .hora{
+    display: flex;
+    gap: 12px;
+}
+
+.mini-icon{
+ font-size: 30px;
+ color: gray;
+}
 
 
 .comentarios {
