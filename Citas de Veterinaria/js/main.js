@@ -95,12 +95,15 @@ function formulario() {
     document.getElementById("hora").value = "";
     document.getElementById("descri").value = "";
     contenedores();
+  
     oper = false;
 }
 
 function contenedores() {
     let fragment = document.createDocumentFragment();
     document.getElementById("abierto").innerHTML = "";
+    document.getElementById("cerrado").innerHTML = "";
+    document.getElementById("canceladas").innerHTML = "";
     mascotas.forEach((item, index) => {
 
         let dcontenedor = document.createElement("div");
@@ -222,9 +225,13 @@ function contenedores() {
 
 
     });
-    document.getElementById("abierto").appendChild(fragment);
 
+    
+    document.getElementById("abierto").appendChild(fragment);
+    
 }
+
+
 
 
 function alertas() {
@@ -375,6 +382,7 @@ function alertas() {
 
     } else {
         formulario();
+      
         document.getElementById("alert2").textContent = "Se ha registrado correctamente";
         modal2.classList.add("active");
         setTimeout(() => {
@@ -395,7 +403,5 @@ function edicion (item,i){
     document.getElementById("hora").value = item.hora;
     document.getElementById("descri").value = item.sintomas;
    
-
-
 }
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="./img/huellitas sanas v4.ico">
-<script src="./js/main.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -64,7 +64,7 @@
             </div>
         </div>
         <h1 class="titulosp">Veterinaria Huellitas Sanas </h1>
- 
+
         <button class="boton" onclick="bform()">Agendar Cita</button>
         <div class="formulario">
             <form class="form" action="">
@@ -76,7 +76,8 @@
                     <label for="">Nombre del Dueño</label>
                     <input type="text" id="nombre-dueño" placeholder="Ingrese el nombre del dueño">
                     <label for="">Telefono</label>
-                    <input type="tel" id="num-tel" pattern="[0-9]+" maxlength="10" placeholder="Ingrese su numero de telefono">
+                    <input type="tel" id="num-tel" pattern="[0-9]+" maxlength="10"
+                        placeholder="Ingrese su numero de telefono">
                     <label for="">Tipo de Mascota</label>
                     <select name="" id="tipo-animal">
                         <option disabled selected hidden value="">Seleccione el tipo de Mascota</option>
@@ -102,14 +103,20 @@
         </div>
         <div class="filtrar">
             <h1 class="titulosp">Filtrar Por</h1>
-            <input type="radio" name="filtro"> Abiertas 
-            <input type="radio" name="filtro"> Cerradas
-            <input type="radio" name="filtro"> Canceladas
+            <input class="btabierto" type="radio" name="filtro"> Abiertas
+            <input class="btcerrado" type="radio" name="filtro"> Cerradas
+            <input class="btcanceladas" type="radio" name="filtro"> Canceladas
         </div>
         <section>
-            <div id="abierto"></div>
-            <div id="cerrado"></div>
-            <div id="canceladas"></div>
+            <div class="babierto">
+                <div id="abierto"></div>
+            </div>
+            <div class="bcerrado">
+                <div id="cerrado"></div>
+            </div>
+            <div class="bcanceladas">
+                <div id="canceladas"></div>
+            </div>
             <h1 class="titulosp">Testimonios</h1>
             <div class="comentarios">
                 <div class="contenedor">
