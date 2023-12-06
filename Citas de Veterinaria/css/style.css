@@ -341,6 +341,13 @@ textarea {
 }
 
 
+.babierto{
+    display: none;
+}
+
+.babierto.active{
+    display: grid;
+}
 
 #abierto {
     display: grid;
@@ -349,12 +356,30 @@ textarea {
     gap: 10px;
 }
 
+
+.bcerrado{
+    display: none;
+}
+
+.bcerrado.active{
+    display: grid;
+}
+
 #cerrado {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     gap: 10px;
 }
+
+.bcanceladas{
+    display: none;
+}
+
+.bcanceladas.active{
+    display: grid;
+}
+
 
 
 

@@ -103,18 +103,20 @@
         </div>
         <div class="filtrar">
             <h1 class="titulosp">Filtrar Por</h1>
-            <input class="btabierto" type="radio" name="filtro"> Abiertas
-            <input class="btcerrado" type="radio" name="filtro"> Cerradas
-            <input class="btcanceladas" type="radio" name="filtro"> Canceladas
+            <input id="btabierto" class="btabierto" type="radio" name="filtro" onclick="filtro()" value="Abiertas"> Abiertas
+            <input id="btcerrado" class="btcerrado" type="radio" name="filtro" onclick="filtro()" value="Cerradas"> Cerradas
+            <input id="btcanceladas" class="btcanceladas" type="radio" name="filtro" onclick="filtro()" value="Canceladas"> Canceladas
         </div>
         <section>
             <div class="babierto">
                 <div id="abierto"></div>
             </div>
             <div class="bcerrado">
+                
                 <div id="cerrado"></div>
             </div>
             <div class="bcanceladas">
+                
                 <div id="canceladas"></div>
             </div>
             <h1 class="titulosp">Testimonios</h1>

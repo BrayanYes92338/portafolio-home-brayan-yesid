@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     bform();
+
 });
 
 function bform() {
@@ -34,7 +35,7 @@ function bform() {
         event.preventDefault();
 
     })
-
+    
 }
 
 let tipoMascotas = [{ img: "./img/istockphoto-963071796-170667a.jpg", tipo: "Perro" },
@@ -52,7 +53,6 @@ function tenerimg(tipoMascotaSeleccionado) {
 }
 
 let mascotas = [];
-let indice = null;
 let oper = null;
 
 function formulario() {
@@ -83,7 +83,8 @@ function formulario() {
             fecha: fecha,
             hora: hora,
             sintomas: descri,
-            imagen: imagenurl
+            imagen: imagenurl,
+            categoria: "Abierta" 
         })
     }
     console.log(mascotas);
@@ -95,15 +96,21 @@ function formulario() {
     document.getElementById("hora").value = "";
     document.getElementById("descri").value = "";
     contenedores();
-  
+    filtro()
     oper = false;
 }
 
+let categoriaActual = "Abierta";
+
 function contenedores() {
     let fragment = document.createDocumentFragment();
+    let fragmentAbierto = document.createDocumentFragment();
+    let fragmentCerrado = document.createDocumentFragment();
+    let fragmentCanceladas = document.createDocumentFragment();
     document.getElementById("abierto").innerHTML = "";
     document.getElementById("cerrado").innerHTML = "";
     document.getElementById("canceladas").innerHTML = "";
+
     mascotas.forEach((item, index) => {
 
         let dcontenedor = document.createElement("div");
@@ -116,7 +123,7 @@ function contenedores() {
         ifcat.classList.add("fcat");
         ifcat.src = item.imagen;
         let pnombrem = document.createElement("p");
-       pnombrem.textContent = item.nombreMascota;
+        pnombrem.textContent = item.nombreMascota;
         let dinfom = document.createElement("div");
         dinfom.classList.add("info-mas");
         let ptipo = document.createElement("p");
@@ -141,7 +148,7 @@ function contenedores() {
         let dfecha = document.createElement("div");
         dfecha.classList.add("fecha");
         let ifecha = document.createElement("i");
-      ifecha.classList.add("far", "fa-calendar", "mini-icon");
+        ifecha.classList.add("far", "fa-calendar", "mini-icon");
         let pcalen = document.createElement("p");
         pcalen.textContent = "Calendario";
         let calen = document.createElement("p");
@@ -149,7 +156,7 @@ function contenedores() {
         let dcontacto = document.createElement("div");
         dcontacto.classList.add("contacto");
         let iphone = document.createElement("i");
-        iphone.classList.add("fas", "fa-phone","mini-icon");
+        iphone.classList.add("fas", "fa-phone", "mini-icon");
         let pconta = document.createElement("p");
         pconta.textContent = "Contacto";
         let ncont = document.createElement("p");
@@ -178,12 +185,22 @@ function contenedores() {
         })
         let selec = document.createElement("select");
         selec.classList.add("select");
+        selec.addEventListener("change", (event) => {
+            cambiarCategoria(index, event.target.value);
+       
+        });
+        let op0 = document.createElement("option");
+        op0.setAttribute("disabled", "true");
+        op0.setAttribute("selected", "true");
+        op0.setAttribute("hidden", "true");
+        op0.textContent = "Cambiar Categoria";
         let op1 = document.createElement("option");
         op1.textContent = "Abierta"
         let op2 = document.createElement("option");
         op2.textContent = "Cerrada"
         let op3 = document.createElement("option");
         op3.textContent = "Cancelada";
+
 
         dcontenedor.appendChild(dconttex);
         dconttex.appendChild(dvmas);
@@ -218,20 +235,76 @@ function contenedores() {
         dcontenedor.appendChild(dboton2);
         dboton2.appendChild(beditar);
         dboton2.appendChild(selec);
+        selec.appendChild(op0);
         selec.appendChild(op1);
         selec.appendChild(op2);
         selec.appendChild(op3);
         fragment.appendChild(dcontenedor);
+        if (item.categoria === "Abierta") {
+            fragmentAbierto.appendChild(dcontenedor);
+        } else if (item.categoria === "Cerrada") {
+            fragmentCerrado.appendChild(dcontenedor);
+        } else if (item.categoria === "Cancelada") {
+            fragmentCanceladas.appendChild(dcontenedor);
+        }
 
+    });
+    document.getElementById("abierto").appendChild(fragmentAbierto);
+    document.getElementById("cerrado").appendChild(fragmentCerrado);
+    document.getElementById("canceladas").appendChild(fragmentCanceladas);
+}
 
+function filtro() {
+    const btabierto = document.querySelector(".btabierto");
+    const babierto = document.querySelector(".babierto");
+    const btcerrado = document.querySelector(".btcerrado");
+    const bcerrado = document.querySelector(".bcerrado");
+    const btcanceladas = document.querySelector(".btcanceladas");
+    const bcanceladas = document.querySelector(".bcanceladas");
+
+    btabierto.addEventListener("click", () => {
+        mostrarDiv(babierto);
+    });
+
+    btcerrado.addEventListener("click", () => {
+        mostrarDiv(bcerrado);
+    });
+
+    btcanceladas.addEventListener("click", () => {
+        mostrarDiv(bcanceladas);
+    });
+}
+
+function mostrarDiv(div) {
+    const divs = document.querySelectorAll('.babierto, .bcerrado, .bcanceladas');
+    divs.forEach(d => {
+        if (d === div) {
+            d.classList.add("active");
+        } else {
+            d.classList.remove("active");
+        }
     });
 
     
-    document.getElementById("abierto").appendChild(fragment);
-    
+    if (div.classList.contains("babierto")) {
+        categoriaActual = "Abierta";
+    } else if (div.classList.contains("bcerrado")) {
+        categoriaActual = "Cerrada";
+    } else if (div.classList.contains("bcanceladas")) {
+        categoriaActual = "Cancelada";
+    }
+
+    contenedores(); 
 }
 
-
+function cambiarCategoria(index, nuevaCategoria) {
+    const mascota = mascotas[index];
+    if (mascota && mascota.categoria !== nuevaCategoria) {
+        mascota.categoria = nuevaCategoria;
+        contenedores();
+        
+    }
+}
 
 
 function alertas() {
@@ -382,7 +455,7 @@ function alertas() {
 
     } else {
         formulario();
-      
+
         document.getElementById("alert2").textContent = "Se ha registrado correctamente";
         modal2.classList.add("active");
         setTimeout(() => {
@@ -392,8 +465,10 @@ function alertas() {
     }
 }
 
-function edicion (item,i){
-    oper= true;
+
+
+function edicion(item, i) {
+    oper = true;
     indice = i;
     document.getElementById("nombre-mascota").value = item.nombreMascota;
     document.getElementById("nombre-dueño").value = item.nombreDueño;
@@ -402,6 +477,7 @@ function edicion (item,i){
     document.getElementById("fecha").value = item.fecha;
     document.getElementById("hora").value = item.hora;
     document.getElementById("descri").value = item.sintomas;
+
    
 }
 
