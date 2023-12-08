@@ -679,7 +679,7 @@ hr {
     }
 
     .modal-content {
-        width: 360px;
+        width: 340px;
 
     }
 
@@ -688,7 +688,7 @@ hr {
     }
 
     .form {
-        width: 360px;
+        width: 340px;
     }
 
     #abierto {
@@ -704,7 +704,7 @@ hr {
     }
 
     .contened {
-        width: 360px;
+        width: 340px;
         height: 420px;
 
     }
@@ -728,7 +728,7 @@ hr {
     .contenedores-mascot {
         grid-template-columns: repeat(1, 1fr);
         gap: 15px;
-        margin-bottom: 710px;
+        margin-bottom: 740px;
     }
 
     .comentarios {
@@ -737,14 +737,13 @@ hr {
     }
 
     .contenedor {
-        width: 360px;
+        width: 340px;
         height: 280px;
 
     }
 
-    .puntuacion {
-        font-size: 4px;
-
+    .fas, .fa-star{
+        font-size: 20px;
     }
 
     .fperfil {
