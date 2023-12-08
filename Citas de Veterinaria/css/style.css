@@ -249,7 +249,7 @@ main {
     left: 180px;
     bottom: 20px;
     z-index: 1;
-
+   
 }
 
 .form {
@@ -679,12 +679,16 @@ hr {
     }
 
     .modal-content {
-        width: 380px;
+        width: 360px;
 
     }
 
+    .cerrar {
+        left: 150px;   
+    }
+
     .form {
-        width: 380px;
+        width: 360px;
     }
 
     #abierto {
@@ -700,7 +704,7 @@ hr {
     }
 
     .contened {
-        width: 380px;
+        width: 360px;
         height: 420px;
 
     }
@@ -724,17 +728,17 @@ hr {
     .contenedores-mascot {
         grid-template-columns: repeat(1, 1fr);
         gap: 15px;
-        margin-bottom: 700px;
+        margin-bottom: 710px;
     }
 
     .comentarios {
         grid-template-columns: repeat(1, 1fr);
-        gap: 15px;
+        gap: 10px;
     }
 
     .contenedor {
-        width: 380px;
-        height: 330px;
+        width: 360px;
+        height: 280px;
 
     }
 
@@ -744,14 +748,20 @@ hr {
     }
 
     .fperfil {
-        width: 190px;
-        height: 190px;
+        width: 180px;
+        height: 180px;
         margin-top: 30px;
     }
 
     .testimonio {
         margin-top: 20px;
         text-align: left;
+        font-size: 12px;
+    }
+
+    .fotomascota {
+        height: 320px;
+        width: 320px;
     }
 
     .grupo-1 {
