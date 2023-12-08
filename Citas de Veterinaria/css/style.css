@@ -679,7 +679,7 @@ hr {
     }
 
     .modal-content {
-        width: 330px;
+        width: 325px;
 
     }
 
@@ -688,7 +688,7 @@ hr {
     }
 
     .form {
-        width: 330px;
+        width: 325px;
     }
 
     #abierto {
@@ -704,7 +704,7 @@ hr {
     }
 
     .contened {
-        width: 330px;
+        width: 325px;
         height: 420px;
 
     }
@@ -728,7 +728,7 @@ hr {
     .contenedores-mascot {
         grid-template-columns: repeat(1, 1fr);
         gap: 15px;
-        margin-bottom: 750px;
+        margin-bottom: 760px;
     }
 
     .comentarios {
@@ -737,7 +737,7 @@ hr {
     }
 
     .contenedor {
-        width: 330px;
+        width: 325px;
         height: 280px;
 
     }
