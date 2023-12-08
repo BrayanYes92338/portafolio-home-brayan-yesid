@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navtoggle.addEventListener("click", () => {
         navmenu.classList.toggle("nav-menu_visible");
+
     });
 
     bform();

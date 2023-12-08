@@ -341,11 +341,11 @@ textarea {
 }
 
 
-.babierto{
+.babierto {
     display: none;
 }
 
-.babierto.active{
+.babierto.active {
     display: grid;
 }
 
@@ -357,11 +357,11 @@ textarea {
 }
 
 
-.bcerrado{
+.bcerrado {
     display: none;
 }
 
-.bcerrado.active{
+.bcerrado.active {
     display: grid;
 }
 
@@ -372,16 +372,13 @@ textarea {
     gap: 10px;
 }
 
-.bcanceladas{
+.bcanceladas {
     display: none;
 }
 
-.bcanceladas.active{
+.bcanceladas.active {
     display: grid;
 }
-
-
-
 
 #canceladas {
     display: grid;
@@ -409,6 +406,7 @@ textarea {
     display: flex;
     margin-left: 60px;
     margin-top: 4px;
+  
 }
 
 .cont-texto {
@@ -616,4 +614,141 @@ hr {
     margin-bottom: 20px;
     border: 3px solid white;
     border-radius: 15px;
+}
+
+@media(max-width: 768px) {
+
+    .nav-toggle {
+        display: block;
+    }
+
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 40px;
+        background-color: #2c3e50;
+        position: fixed;
+        left: 0;
+        top: 120px;
+        width: 100%;
+        padding: 20px 0;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .logo {
+        margin-left: 15px;
+        margin-top: 20px;
+    }
+
+    .img {
+        width: 170px;
+        height: 80px;
+    }
+
+    .nav-menu-link {
+        color: white;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: gray;
+    }
+
+}
+
+@media(max-width: 500px) {
+
+    .modal-content {
+        width: 420px;
+        margin-left: 10px;
+    }
+
+    #abierto {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #cerrado {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #canceladas {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contened {
+        width: 425px;
+        height: 420px;
+
+    }
+
+    .fcat {
+        width: 80px;
+        height: 80px;
+    }
+
+    .info-mas {
+        flex-direction: column;
+        margin-left: 5px;
+    }
+
+ 
+    .contenedores-mascot {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        margin-bottom: 700px;
+    }
+
+    .comentarios {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .contenedor {
+        width: 420px;
+        height: 290px;
+
+    }
+
+    .fperfil {
+        margin-top: 40px;
+    }
+
+    .testimonio {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .grupo-1 {
+        flex-direction: column;
+    }
+
+    .puntuacion {
+        font-size: 25px;
+        margin-top: 5px;
+    }
+
+    .pie-de-pagina .grupo-1 {
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .pie-de-pagina .grupo-1 .box figure img {
+        width: 270px;
+        height: 140px;
+    }
+
 }
