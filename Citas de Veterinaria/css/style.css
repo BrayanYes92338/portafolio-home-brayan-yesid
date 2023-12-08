@@ -514,7 +514,7 @@ textarea {
 .fperfil {
     width: 210px;
     height: 210px;
-    
+
 }
 
 .sgaleria {
@@ -681,6 +681,10 @@ hr {
     .modal-content {
         width: 380px;
 
+    }
+
+    .form {
+        width: 380px;
     }
 
     #abierto {
