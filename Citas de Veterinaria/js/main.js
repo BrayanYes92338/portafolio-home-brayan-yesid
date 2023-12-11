@@ -88,6 +88,8 @@ function formulario() {
             categoria: "Abierta" 
         })
     }
+
+    document.getElementById("tipo-animal").disabled = false;
     console.log(mascotas);
     document.getElementById("nombre-mascota").value = "";
     document.getElementById("nombre-dueño").value = "";
@@ -479,6 +481,6 @@ function edicion(item, i) {
     document.getElementById("hora").value = item.hora;
     document.getElementById("descri").value = item.sintomas;
 
-   
+    document.getElementById("tipo-animal").disabled = true;
 }
 
