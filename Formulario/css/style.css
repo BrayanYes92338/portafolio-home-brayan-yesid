@@ -6,14 +6,25 @@
 }
 
 
+
 body {
     background-color: aliceblue;
-    height: 140vh;
+    height: 120vh;
     display: grid;
     place-items: center;
 }
 
-form {
+.formulario {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.form {
     padding: 40px 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
@@ -21,6 +32,7 @@ form {
     width: 450px;
     background-color: white;
 }
+
 
 .input-group {
     display: flex;
@@ -218,13 +230,24 @@ input::placeholder {
     bottom: 20px;
 }
 
+.contenedor2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+}
+
+
 table {
-    margin-top: 20px;
+
     background-color: white;
     width: 70%;
     border-collapse: collapse;
     text-align: center;
-   
+    margin-bottom: 50px;
+
+
 }
 
 th,
@@ -240,18 +263,176 @@ thead {
 
 }
 
+#recipiente {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 5px;
+    display: none;
 
-@media (max-width: 991px) {
-    body {
-        padding: 30px;
+}
+
+.contenedor {
+    border: solid gray 3px;
+    width: 620px;
+    height: 250px;
+    background: white;
+    margin-bottom: 50px;
+
+}
+
+.cuerpo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+
+
+}
+
+.cn {
+    padding: 8px;
+    display: flex;
+
+}
+
+.titulo {
+    font-weight: bolder;
+}
+
+
+
+.botones {
+ 
+   margin-left: 270px;
+}
+
+.btn-editar {
+    color: white;
+    background: #3CB662;
+    border: none;
+    font-size: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-editar:hover {
+    background: #3CB662;
+    opacity: 0.9;
+}
+
+.btn-borrar {
+    color: white;
+    background: #D10011;
+    border: none;
+    margin-left: 20px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-borrar:hover {
+    background: #D10011;
+    opacity: 0.9;
+}
+
+@media(max-width: 1700px) {
+    .contenedor2 {
+        display: none;
     }
 
-    form {
-        padding: 50px 30px;
-        width: 100%;
+    #recipiente.active {
+        display: grid;
+        margin-top: 40px;
+
     }
 
-    input {
-        padding: 15px;
+    #recipiente {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
+
+}
+
+@media(max-width: 1276px) {
+    .contenedor {
+
+        width: 430px;
+        height: 360px;
+    }
+
+    .cuerpo {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .botones {
+        margin-left: 200px;
+    }
+}
+
+@media(max-width: 890px) {
+
+    #recipiente {
+
+        gap: 10px;
+    }
+
+    .contenedor {
+        width: 375px;
+        height: 410px;
+    }
+
+
+
+    .botones {
+        margin-left: 210px;
+    }
+
+}
+
+
+@media(max-width: 775px) {
+
+    .form {
+        width: 390px;
+    }
+
+    #recipiente {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+
+
+}
+
+@media(max-width:400px) {
+
+
+
+    h2{
+        font-size: 38px;
+    }
+
+    .form {
+        width: 370px;
+    }
+
+    .contenedor {
+        width: 370px;
+        height: 420px;
+    }
+
+    .cuerpo {
+        grid-template-columns: repeat(1, 1fr);
+  
+    }
+
+    .botones {
+
+        margin-left: 200px;
+
+    }
+
 }
