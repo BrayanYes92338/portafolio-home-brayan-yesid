@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js"></script>
+    <title>Citas</title>
+</head>
+
+<body>
+  
+    <div class="cont-turnos">
+
+        <div class="contenedor_turno">
+            <div class="pri_cont">
+                <img src="./img/logo banco.jpg" alt="" class="imagen">
+                <h1 class="titu">Banco Town Comunera</h1>
+            </div>
+            <div class="con_cuerpo">
+                <h2>Por favor escoge un turno</h2>
+                <button class="btn" onclick="citas()" id="sumar">Solicitar Turno</button>
+                <div class="cont_turnos">
+                    <p class="palabratur">Turno:</p>
+                    <p class="resultado" id="contar">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="lista">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Turno</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id="contenido">
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="pantalla_turno">
+            <h2 class="titulos">Turno</h2>
+            <h2 class="rojo" id="contarturno" >0</h2>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-const boton = document.querySelector(".button");
-const contenedor = document.querySelector(".contenedor-cars");
+    const boton = document.querySelector(".button");
+    const contenedor = document.querySelector(".contenedor-cars");
 
-boton.addEventListener("click", ()=>{
-    contenedor.classList.add("active")
-})
+    boton.addEventListener("click", () => {
+        contenedor.classList.add("active")
+    })
 
-tarjetas();
+    tarjetas();
 
 });
 
@@ -39,7 +39,7 @@ function formulario() {
         acepta = "No acepta";
     }
 
-    if (oper === true ) {
+    if (oper === true) {
         registros[indice].name = document.getElementById("name").value;
         registros[indice].lastname = document.getElementById("lastname").value;
         registros[indice].birthdate = document.getElementById("birthdate").value;
@@ -361,10 +361,10 @@ function tabla() {
     });
 
 
-   
+
 }
 
-function tarjetas(){
+function tarjetas() {
     let fragment = document.createDocumentFragment()
     registros.forEach((item, index) => {
         let divcontenedor = document.createElement("div");
@@ -374,56 +374,56 @@ function tarjetas(){
         let dcont_nombre = document.createElement("div");
         dcont_nombre.classList.add("cont-nombre", "cn");
         let pnombre = document.createElement("p");
-        pnombre.textContent ="Nombre:";
+        pnombre.textContent = "Nombre:";
         pnombre.classList.add("titulo");
         let prnombre = document.createElement("p");
         prnombre.textContent = item.name;
         let dcont_apellido = document.createElement("div");
         dcont_apellido.classList.add("cont-apellido", "cn");
         let pappelido = document.createElement("p");
-        pappelido.textContent ="Apellido:";
+        pappelido.textContent = "Apellido:";
         pappelido.classList.add("titulo");
         let prapellido = document.createElement("p");
         prapellido.textContent = item.lastname;
-        let dfecha_n= document.createElement("div");
+        let dfecha_n = document.createElement("div");
         dfecha_n.classList.add("cont-fecha-n", "cn");
         let pfecha_n = document.createElement("p");
-        pfecha_n.textContent ="Fecha de nacimiento:";
+        pfecha_n.textContent = "Fecha de nacimiento:";
         pfecha_n.classList.add("titulo");
         let prfecha_n = document.createElement("p");
         prfecha_n.textContent = item.birthdate;
         let dtelefono = document.createElement("div");
         dtelefono.classList.add("cont-telefono", "cn");
         let ptelefono = document.createElement("p");
-        ptelefono.textContent ="Telefono:";
+        ptelefono.textContent = "Telefono:";
         ptelefono.classList.add("titulo");
         let prtelefono = document.createElement("p");
         prtelefono.textContent = item.phone;
         let dcorreo = document.createElement("div");
         dcorreo.classList.add("cont-correo", "cn");
         let pcorreo = document.createElement("p");
-        pcorreo.textContent ="Correo:";
+        pcorreo.textContent = "Correo:";
         pcorreo.classList.add("titulo");
         let prcorreo = document.createElement("p");
         prcorreo.textContent = item.email;
         let dtipo_doc = document.createElement("div");
         dtipo_doc.classList.add("cont-tipo-doc", "cn");
         let ptipo_doc = document.createElement("p");
-        ptipo_doc.textContent ="Tipo de documento:";
+        ptipo_doc.textContent = "Tipo de documento:";
         ptipo_doc.classList.add("titulo");
         let prtipo_doc = document.createElement("p");
         prtipo_doc.textContent = item.documenttype;
         let dnum_doc = document.createElement("div");
         dnum_doc.classList.add("cont-num-doc", "cn");
         let pnum_doc = document.createElement("p");
-        pnum_doc.textContent ="Numero de documento:";
+        pnum_doc.textContent = "Numero de documento:";
         pnum_doc.classList.add("titulo");
         let prnum_doc = document.createElement("p");
         prnum_doc.textContent = item.documentnumber;
         let dgenero = document.createElement("div");
         dgenero.classList.add("cont-genero", "cn");
         let pgenero = document.createElement("p");
-        pgenero.textContent ="Genero:";
+        pgenero.textContent = "Genero:";
         pgenero.classList.add("titulo");
         let prgenero = document.createElement("p");
         prgenero.textContent = item.male ? "Masculino" : "Femenino";

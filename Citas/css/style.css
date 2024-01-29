@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 90px 0;
+    position: relative;
+    min-height: 100vh;
+    background: white;
+  
+}
+
+
+
+.cont-turnos{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+}
+
+.contenedor_turno {
+    background-color: white;
+    width: 480px;
+    height: 320px;
+    border: 2px black solid;
+    align-items: center;
+    justify-content: center;
+}
+
+.titu {
+    font-size: 30px;
+    color: grey;
+}
+
+.pri_cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.imagen {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.con_cuerpo {
+    display: grid;
+    place-items: center;
+    margin-top: 30px;
+
+}
+
+.btn {
+    background: #1967e3;
+    font-size: 24px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 8px;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin-top: 30px;
+}
+
+.btn:hover{
+    background: #2773ee;
+}
+
+.cont_turnos{
+    display: flex;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.palabratur{
+    font-weight: bolder;
+}
+
+.resultado{
+    margin-left: 8px;
+}
+
+.lista{
+    width: 480px;
+    height: 305px;
+    border: solid 2px black;
+    overflow-y: auto;
+}
+
+table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+   
+}
+
+th,
+td {
+    border: solid 1px black;
+    padding: 21px;
+ 
+}
+
+
+
+
+
+thead {
+    background-color: #0bac51;
+    border-bottom: solid 3px #075507;
+    color: white;
+    font-size: 20px;
+
+}
+
+
+
+.tdrojoopciones.active{
+    display: table-row;
+}
+
+.btnaceptar{
+    background: #0bac51;
+    font-size: 19px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 8px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+.btnrechazar{
+    background: #e31717;
+    font-size: 19px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 8px;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin-left: 10px;
+
+}
+
+.pantalla_turno {
+    background-color: black;
+    width: 480px;
+    height: 320px;
+    border: solid gray 8px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+}
+
+
+
+.titulos {
+    color: white;
+    font-size: 50px;
+}
+
+.rojo {
+    color: red;
+    margin-bottom: 50px;
+    font-size: 100px;
+}
