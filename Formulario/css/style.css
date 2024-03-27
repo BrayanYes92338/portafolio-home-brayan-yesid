@@ -302,8 +302,8 @@ thead {
 
 
 .botones {
- 
-   margin-left: 270px;
+
+    margin-left: 270px;
 }
 
 .btn-editar {
@@ -411,7 +411,7 @@ thead {
 
 
 
-    h2{
+    h2 {
         font-size: 38px;
     }
 
@@ -426,7 +426,7 @@ thead {
 
     .cuerpo {
         grid-template-columns: repeat(1, 1fr);
-  
+
     }
 
     .botones {

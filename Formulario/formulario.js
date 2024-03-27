@@ -133,7 +133,7 @@ function formulario_menor() {
 }
 
 function validar() {
-    event.preventDefault();
+
     const tryagain = document.querySelector(".okbtn");
     const tryagain2 = document.querySelector(".okbtn2");
     const tryagain3 = document.querySelector(".okbtn3");

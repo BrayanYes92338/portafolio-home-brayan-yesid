@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     bform();
+    
 
 });
 
@@ -36,6 +37,7 @@ function bform() {
         event.preventDefault();
 
     })
+
     
 }
 
@@ -483,4 +485,3 @@ function edicion(item, i) {
 
     document.getElementById("tipo-animal").disabled = true;
 }
-
